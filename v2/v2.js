@@ -127,3 +127,19 @@
     addEventListener('pointerup', () => { if (!down) return; down = false; vp.classList.remove('drag'); if (moved) { const s = step(); vp.scrollTo({ left: Math.round(vp.scrollLeft / s) * s, behavior: 'smooth' }); } });
   }
 })();
+
+/* footer wordmark: fit to full width, soft reveal, gentle parallax */
+(() => {
+  const box = document.querySelector('.f2-mark'); if (!box) return;
+  const t = box.querySelector('span');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fit = () => { t.style.setProperty('--fs', '100px'); t.style.setProperty('--fs', (100 * box.clientWidth / t.scrollWidth).toFixed(2) + 'px'); };
+  fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+  new IntersectionObserver(([e], o) => { if (e.isIntersecting) { box.classList.add('in'); o.disconnect(); } }, { threshold: .25 }).observe(box);
+  if (reduce) return;
+  let raf = 0;
+  // settles at 0 exactly when the page reaches its bottom
+  const par = () => { raf = 0; const left = document.documentElement.scrollHeight - (scrollY + innerHeight);
+    t.style.setProperty('--py', Math.min(60, Math.max(0, left * .25)).toFixed(1) + 'px'); };
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(par); }, { passive: true }); par();
+})();

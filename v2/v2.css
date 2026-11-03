@@ -1166,3 +1166,11 @@ b,strong{font-weight:600}
 .stx-grid{grid-template-columns:repeat(3,1fr);gap:40px 32px}
 .stx-grid>div{border-top:0;padding:0}
 @media (max-width:720px){.stx-grid{grid-template-columns:repeat(2,1fr);gap:28px 16px}}
+
+/* footer wordmark: full width, fades into the footer, soft reveal + parallax */
+.f2-mark{display:block;padding:0;margin-top:16px;overflow:hidden;color:rgba(255,255,255,.1)}
+.f2-mark span{display:block;width:max-content;margin:0 auto;font-size:var(--fs,17vw);line-height:.82;letter-spacing:-.04em;
+  -webkit-mask-image:linear-gradient(180deg,#000 15%,transparent 95%);mask-image:linear-gradient(180deg,#000 15%,transparent 95%);
+  opacity:0;transform:translate3d(0,var(--py,0px),0);transition:opacity .5s cubic-bezier(.25,.1,.25,1);will-change:transform}
+.f2-mark.in span{opacity:1}
+@media (prefers-reduced-motion:reduce){.f2-mark span{opacity:1;transform:none}}
