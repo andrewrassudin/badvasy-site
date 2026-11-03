@@ -1084,3 +1084,85 @@ a.mh:hover svg{transform:translateX(3px)}
 .ab::after{left:0;right:0;border-radius:0}
 @media (max-width:1100px){.abx-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.abx{margin-top:48px}.abx-row{grid-template-columns:1fr;gap:12px}.ab{padding:22px}}
+
+/* =========================================================
+   Unslop polish pass (andrew-unslop) — flat, calm, guideline-only
+   ========================================================= */
+/* weights ≤ 600 */
+b,strong{font-weight:600}
+.ab b,.wf b{letter-spacing:0}
+
+/* no looping decor */
+.sp{display:none}
+.r1{animation:none}
+.lang button{transition:background-color var(--t) var(--e),color var(--t) var(--e)}
+
+/* sentence-case labels, no tracking */
+.logos-t,.logos-t b,.stx-eb,.tl-st,.f2-l,.bc-b em{text-transform:none;letter-spacing:0}
+.logos-t,.logos-t b{font-size:14px}
+.stx-eb{font-size:15px}
+.tl-st{font-size:13px}
+.f2-l{font-size:14px}
+
+/* flat surfaces: no decorative gradients */
+.ftr2::before{display:none}
+.s-portal{background:var(--sea)}
+.qc-sky{background:var(--sky)}
+
+/* guideline colours only */
+.s-tag.y{background:var(--lemon);color:var(--sea)}
+.ok{background:var(--soft);color:var(--sea)}
+.pay{background:var(--lemon);color:var(--sea)}
+.btn-out{box-shadow:inset 0 0 0 1.5px rgba(38,119,131,.45)}
+
+/* flat icon chips — the lightest tint, no shadows */
+.ab-top i,.pt-ic,.cinfo i,.mi i,.ni2{background:var(--canvas);box-shadow:none}
+.pcap i,.fi,.wf i{box-shadow:none}
+.cinfo a:hover i{background:#fff}
+.pt-grid li:hover .pt-ic{background:var(--soft)}
+.pt-grid li.y .pt-ic,.pcap i.y,.fi.y{background:#fff;color:var(--sea);box-shadow:none}
+
+/* portal: no card-on-card — the six items stand on their own */
+.portal{background:none;box-shadow:none;padding:0;gap:16px;overflow:visible;align-items:center}
+.pt-copy{padding:0 40px 0 0}
+.pt-grid{gap:16px}
+.pt-grid li{background:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-1);padding:24px}
+.pt-grid li:hover{background:#fff;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
+.pt-grid li.y,.pt-grid li.y:hover{background:var(--lemon)}
+@media (max-width:1100px){.pt-copy{padding:0 0 8px}}
+
+/* brand cards: button fades out before the copy slides back (no "bounce") */
+.bx-btn{transition:opacity .15s var(--e),background-color var(--t) var(--e)}
+.bx:hover .bx-btn,.bx:focus-visible .bx-btn{transition:opacity var(--t) var(--e) .1s,background-color var(--t) var(--e)}
+
+/* header ↔ mega menu: one flush piece with a hairline divider */
+.mega{top:100%}
+.hdr.is-stuck .mega{top:calc(100% + 12px)}
+.mega-box{border-radius:0 0 12px 12px;border-top:1px solid var(--line);
+  box-shadow:0 30px 70px -28px rgba(13,60,70,.35),0 1px 0 rgba(13,60,70,.05)}
+.hdr.is-stuck .bar:has(.mega.is-open)>.bar-in{border-radius:12px 12px 0 0}
+
+/* mobile */
+@media (max-width:720px){
+  .util .wrap{padding:0 16px}
+  .aud{padding:0;scroll-padding:0 16px}
+  .wf span{max-height:none}
+}
+
+/* header: no shadow fragments in the solid state, no underline on audiences */
+.hdr:not(.is-stuck) .bar>.bar-in{box-shadow:none}
+.aud-b::after{display:none}
+.aud-b.is-on{background:none;box-shadow:none;color:var(--sea)}
+.aud-b{transition:color var(--t) var(--e)}
+.aud-b:hover{color:var(--sea)}
+
+/* hovers: cards stay in place — only a soft shadow/colour change (Apple ease, 0.3–0.4s) */
+.dc,.tl li,.nw,.qrc,.ab,.pt-grid li,.qc,.nc,.bc,.cinfo,.slider{transition:box-shadow .4s var(--e),background-color var(--t) var(--e)}
+.dc:hover,.tl li:hover,.nw:hover,.qrc:hover,.ab:hover,.pt-grid li:hover,.qc:hover,.nc:hover,.bc:hover{transform:none}
+.why-vis:hover .wv-card,.qc:hover .qi,.bc:hover .bc-m,.portal:hover .qr-card,.why-phone:hover .phone{transform:none}
+.dc-img img,.nw-big img,.nw-i img,.mcard img{transition:transform .8s var(--e-out)}
+
+/* numbers: six figures, no dividers */
+.stx-grid{grid-template-columns:repeat(3,1fr);gap:40px 32px}
+.stx-grid>div{border-top:0;padding:0}
+@media (max-width:720px){.stx-grid{grid-template-columns:repeat(2,1fr);gap:28px 16px}}
