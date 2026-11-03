@@ -1399,3 +1399,37 @@ b,strong{font-weight:600}
 .bar{transition:background-color .45s var(--e)}
 .hero .s-media{margin:0 max(var(--gut),calc((100vw - var(--wrap))/2)) 0 0;border-radius:12px;isolation:isolate}
 @media (max-width:1100px){.hero .s-media{margin:0 var(--gut)}}
+
+/* Stillness pass: hovers never move anything — colour only */
+.btn:hover svg,.lnk:hover svg,a.mh:hover svg,.bx:hover .bx-btn svg,.bx:hover .bx-arr svg,.mega-foot a:hover svg,.ab:hover .ab-more svg,.nw:hover svg,.qrc:hover svg{transform:none}
+.btn svg,.lnk svg,.mh svg,.bx-btn svg,.bx-arr svg{transition:none}
+.tl li:hover::after{transform:none}
+.mega-box,.mega.is-open .mega-box{transform:none}
+.ab .ab-more{transform:none}
+@media (min-width:1101px) and (hover:hover){
+  .bx-c b,.bxgrid>.bx.is-on .bx-c b{transform:none;font-size:28px;transition:none}
+  .bx-arr{top:20px;bottom:auto;right:20px}
+  .bx-top{right:72px}
+  .bx-top i{position:static}
+  .bx-top{justify-content:flex-start;gap:6px}
+  .bx-c{padding-right:0;width:calc(100% - 48px);max-width:400px}
+}
+@media (min-width:1101px) and (hover:hover){
+  .bxgrid>.bx .bx-d,.bxgrid>.bx.is-on .bx-d,.bxgrid>.bx:not(.is-on) .bx-d{max-height:none!important;height:66px;width:360px;margin-top:10px!important;overflow:hidden;transition:opacity .3s var(--e)!important}
+  .bxgrid>.bx.is-on .bx-d{transition:opacity .5s var(--e) .25s!important}
+  .bx-c{width:auto;max-width:none}
+}
+
+/* «Робота з нами»: descriptions always shown — hover changes the surface only, nothing moves */
+@media (min-width:1101px){
+  .wf span,.wf.is-on span,.wf:hover span{max-height:none!important;opacity:1!important;transition:none}
+}
+/* packaging illustration stays still */
+.dc:hover .pk-row svg{transform:none}
+/* timeline: the hidden text keeps its spacing, only its height opens */
+.tl-more,.tl li:hover .tl-more,.tl li:focus-visible .tl-more{margin-top:12px}
+/* footer: every link on one line */
+@media (min-width:1101px){.f2-nav{grid-template-columns:repeat(3,max-content);column-gap:clamp(40px,4vw,72px)}.f2-nav a{white-space:nowrap}}
+
+/* numbers photo: thin topographic contour lines (brandbook relief motif), barely visible, at an angle */
+.stx::after{content:"";position:absolute;inset:-25%;z-index:-1;pointer-events:none;background:url(../assets/img/topo.svg) center/cover no-repeat;opacity:.13;transform:rotate(-9deg)}

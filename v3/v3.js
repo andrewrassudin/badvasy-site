@@ -13,11 +13,13 @@
   const dds = $$('.dd');
   const close = () => dds.forEach(d => { d.classList.remove('is-open'); $('.nl', d).setAttribute('aria-expanded', 'false'); });
   const open = d => { dds.forEach(x => x !== d && x.classList.remove('is-open')); d.classList.add('is-open'); $('.nl', d).setAttribute('aria-expanded', 'true'); };
+  const timers = new Map();
+  const shut = d => { d.classList.remove('is-open'); $('.nl', d).setAttribute('aria-expanded', 'false'); };
   dds.forEach(d => {
-    let t;
     if (hover) {
-      d.addEventListener('mouseenter', () => { clearTimeout(t); open(d); });
-      d.addEventListener('mouseleave', () => { t = setTimeout(close, 140); });
+      // opening one menu cancels every pending close; leaving closes only its own menu, after a short grace period
+      d.addEventListener('mouseenter', () => { timers.forEach(clearTimeout); timers.clear(); open(d); });
+      d.addEventListener('mouseleave', () => { timers.set(d, setTimeout(() => { timers.delete(d); shut(d); }, 220)); });
     }
     $('.nl', d).addEventListener('click', () => d.classList.contains('is-open') ? close() : open(d));
   });
@@ -35,7 +37,8 @@
   $$('[data-split]').forEach(h => {
     const words = h.textContent.trim().split(/\s+/);
     h.setAttribute('aria-label', h.textContent.trim());
-    h.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true"><span style="--wi:${i}">${w}</span></span>`).join(' ');
+    const br = +h.dataset.br || 0; // optional forced line break after word N
+    h.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true"><span style="--wi:${i}">${w}</span></span>` + (br && i === br - 1 ? '<br>' : '')).join(' ');
   });
 
   /* count-up */
