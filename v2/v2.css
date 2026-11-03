@@ -1307,3 +1307,20 @@ b,strong{font-weight:600}
   .bxgrid:not(:hover) .bx:first-child .bx-btn,.bxgrid .bx:hover .bx-btn{max-height:42px;margin-top:20px}
   .bx-top em{white-space:nowrap}
 }
+
+/* header: one standalone plate in every state, short vertical dividers */
+.bar{padding-top:12px;background:transparent;border-bottom:0}
+.hdr.is-stuck .bar{background:transparent}
+.bar>.bar-in,.hdr.is-stuck .bar>.bar-in{transform:none;background:#fff;border-radius:12px;padding:0 12px 0 8px}
+.hdr.is-stuck .bar>.bar-in{background:rgba(255,255,255,.9);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6)}
+.nav{position:relative}
+.nav::before,.bar-act .btn-out::before{content:"";position:absolute;top:50%;width:1px;height:24px;margin-top:-12px;background:var(--line)}
+.nav::before{left:0}
+.bar-act .btn-out{position:relative;margin-left:21px}
+.bar-act .btn-out::before{left:-16px}
+.mega,.hdr.is-stuck .mega{top:100%}
+.bar:has(.mega.is-open)>.bar-in{border-radius:12px 12px 0 0}
+@media (max-width:720px){.bar{padding-top:8px}.bar>.bar-in{padding:0 4px 0 0}}
+.bar{padding-bottom:12px}
+.mega,.hdr.is-stuck .mega{top:calc(100% - 12px)}
+@media (max-width:720px){.bar{padding-bottom:8px}}
