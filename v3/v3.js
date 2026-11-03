@@ -146,7 +146,7 @@
   // history: reserve the height of the tallest opened card
   const tl = document.querySelector('.tl');
   if (tl) {
-    const fit = () => { tl.style.setProperty('--tl-h', 'auto'); tl.classList.add('tl-measure'); const h = tl.offsetHeight; tl.classList.toggle('tl-measure', false); tl.style.setProperty('--tl-h', h + 'px'); };
+    const fit = () => { tl.style.setProperty('--tl-h', 'auto'); tl.classList.add('tl-still'); const h0 = tl.offsetHeight; tl.classList.add('tl-measure'); const h = tl.offsetHeight; tl.classList.toggle('tl-measure', false); tl.style.setProperty('--tl-h', h + 'px'); tl.parentElement.style.setProperty('--tl-x', (h - h0) + 'px'); void tl.offsetHeight; tl.classList.toggle('tl-still', false); };
     fit(); let __w = innerWidth; addEventListener('resize', () => { if (innerWidth !== __w) { __w = innerWidth; fit(); } }); document.fonts && document.fonts.ready.then(fit);
   }
   // numbers photo: subtle scroll-linked zoom 1.12 → 1.0
