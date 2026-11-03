@@ -133,7 +133,7 @@
   const box = document.querySelector('.f2-mark'); if (!box) return;
   const t = box.querySelector('span');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fit = () => { t.style.setProperty('--fs', '100px'); t.style.setProperty('--fs', (100 * box.clientWidth / t.scrollWidth).toFixed(2) + 'px'); };
+  const fit = () => { t.style.setProperty('--fs', '100px'); t.style.setProperty('--fs', (100 * box.clientWidth / t.getBoundingClientRect().width * .99).toFixed(2) + 'px'); };
   fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
   new IntersectionObserver(([e], o) => { if (e.isIntersecting) { box.classList.add('in'); o.disconnect(); } }, { threshold: .25 }).observe(box);
   if (reduce) return;

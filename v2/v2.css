@@ -1174,3 +1174,6 @@ b,strong{font-weight:600}
   opacity:0;transform:translate3d(0,var(--py,0px),0);transition:opacity .5s cubic-bezier(.25,.1,.25,1);will-change:transform}
 .f2-mark.in span{opacity:1}
 @media (prefers-reduced-motion:reduce){.f2-mark span{opacity:1;transform:none}}
+.f2-mark{overflow:visible}
+.f2-mark span{padding-right:.05em}
+.f2-bot{border-top:0}
