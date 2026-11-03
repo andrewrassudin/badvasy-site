@@ -1177,3 +1177,19 @@ b,strong{font-weight:600}
 .f2-mark{overflow:visible}
 .f2-mark span{padding-right:.05em}
 .f2-bot{border-top:0}
+
+/* timeline: line on top, cards open downward, no divider inside */
+.tl{padding-top:56px;padding-bottom:0;align-items:flex-start}
+.tl::before,.tl::after{top:22px;bottom:auto}
+.tl li::before{top:-34px;bottom:auto;background:linear-gradient(180deg,#b9d3d7,rgba(38,119,131,0))}
+.tl li::after{top:-40px;bottom:auto}
+.tl-more{margin-top:0}
+.tl-more>span,.tl li.y .tl-more>span{border-top:0}
+.tl li:hover .tl-more>span,.tl li:focus-visible .tl-more>span{padding-top:0}
+.tl li:hover .tl-more,.tl li:focus-visible .tl-more{margin-top:12px}
+@media (hover:none){.tl-more{margin-top:12px}.tl-more>span{padding-top:0}}
+/* room for a card to open down without pushing the next section */
+.tl-vp{position:relative;z-index:1;padding-bottom:var(--tl-room,0px);margin-bottom:calc(-1 * var(--tl-room,0px))}
+.tl-vp{--tl-room:72px}
+@media (hover:hover){.tl{height:286px}}
+@media (hover:none){.tl-vp{--tl-room:0px}}
