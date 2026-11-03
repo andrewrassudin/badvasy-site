@@ -1068,3 +1068,5 @@ a.mh:hover svg{transform:translateX(3px)}
 .sec-head{margin-bottom:32px}
 .center-head{margin-bottom:44px}
 .h2{letter-spacing:-.025em}
+/* revealed elements: no leftover reveal transition/delay */
+.rv-done{opacity:1;transform:none}

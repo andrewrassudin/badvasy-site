@@ -93,6 +93,9 @@
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
     e.target.classList.add('in');
+    const el = e.target;
+    // after the reveal finishes, hand transitions back to the element's own 0.3s hovers
+    setTimeout(() => { el.classList.remove('rv'); el.classList.add('rv-done'); }, 1300);
     $$('[data-count]', e.target).forEach(count);
     io.unobserve(e.target);
   }), { threshold: .15, rootMargin: '0px 0px -30px 0px' });
