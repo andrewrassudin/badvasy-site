@@ -1193,3 +1193,43 @@ b,strong{font-weight:600}
 .tl-vp{--tl-room:72px}
 @media (hover:hover){.tl{height:286px}}
 @media (hover:none){.tl-vp{--tl-room:0px}}
+/* history sits above the next section so an opened card is never covered */
+.dirs~.sec.hist{z-index:3}
+.tl-vp{--tl-room:88px}
+
+/* logo: static, fills with lemon from top to bottom on hover */
+.logo:hover svg{transform:none}
+.logo .lg{position:relative;display:block}
+.logo .lg svg{display:block}
+.logo .lb-y{color:var(--lemon)}
+.logo .lg-b{position:absolute;inset:0;clip-path:inset(0 0 100% 0);transition:clip-path .3s cubic-bezier(.25,.1,.25,1)}
+.logo:hover .lg-b,.logo:focus-visible .lg-b{clip-path:inset(0 0 0 0)}
+
+/* «Робота з нами»: description space is reserved, so neighbours never jump */
+@media (min-width:1101px){
+  .wf span,.wf.is-on span,.wf:hover span{max-height:none;opacity:0;transition:opacity var(--t) var(--e)}
+  .wf.is-on span,.wf:hover span{opacity:1}
+}
+
+/* mega menu: roomier, ~30% taller */
+.mega-p{gap:32px;padding:40px 40px 44px}
+.mcol{gap:8px}
+.mh{margin-bottom:16px}
+.mi{padding:14px 12px}
+.mcard{min-height:280px}
+.mcard>span{left:24px;right:24px;bottom:22px}
+.mbrands{gap:16px}
+.mbrands a{padding:24px 24px 28px;min-height:180px}
+.mlogos{gap:8px}
+.mega-foot{padding:18px 40px}
+
+/* news meta: category and date on one plate, short vertical divider */
+.nw-m{display:inline-flex;align-self:flex-start;align-items:center;gap:0;height:28px;padding:0 10px;border-radius:8px;background:var(--soft);color:var(--sky);font-size:12.5px;font-weight:500;width:max-content}
+.nw-m em,.nw-o .nw-m em{background:none;padding:0;font-weight:600;color:inherit}
+.nw-m em::after,.nw-o .nw-m em::after{content:"";display:inline-block;width:1px;height:12px;margin:0 10px;vertical-align:-1px;background:currentColor;opacity:.35}
+.nw-o .nw-m{background:var(--lemon);color:var(--sea)}
+
+/* news titles: exactly two lines each, same rhythm */
+.nw-t b,.nw-o b{max-width:none}
+@media (min-width:721px){.nw-t b,.nw-o b{white-space:nowrap}.nw-t b{font-size:clamp(15px,1.25vw,19px)}}
+@media (max-width:720px){.nw-t b br,.nw-o b br{display:none}}
