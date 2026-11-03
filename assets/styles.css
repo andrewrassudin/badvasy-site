@@ -747,3 +747,16 @@ svg{display:block}
   .why-btns .btn{flex:1}
 }
 @media (max-width:720px){ .hero-cta .btn{flex:none} }
+
+/* ---- logos: separate airy band, outlined boxes, moving ---- */
+.hero{padding-bottom:56px}
+.logos{background:#fff;padding:64px 0}
+.logos-in{flex-direction:column;align-items:center;gap:28px}
+.logos-title{text-align:center;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.marquee{width:100%}
+.marquee-track{gap:16px;animation-duration:45s}
+.marquee-track span{display:inline-flex;align-items:center;justify-content:center;min-width:180px;height:84px;padding:0 32px;border:1px solid var(--line);border-radius:12px;background:#fff;
+  font-weight:600;font-size:21px;color:rgba(13,60,70,.55);transition:color .3s var(--ease),border-color .3s var(--ease)}
+.marquee-track span:hover{color:var(--sea);border-color:var(--sky)}
+@keyframes marquee{to{transform:translateX(calc(-50% - 8px))}}
+@media (max-width:720px){.logos{padding:44px 0}.marquee-track span{min-width:140px;height:68px;font-size:17px;padding:0 22px}}
