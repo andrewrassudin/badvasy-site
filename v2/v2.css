@@ -1233,3 +1233,8 @@ b,strong{font-weight:600}
 .nw-t b,.nw-o b{max-width:none}
 @media (min-width:721px){.nw-t b,.nw-o b{white-space:nowrap}.nw-t b{font-size:clamp(15px,1.25vw,19px)}}
 @media (max-width:720px){.nw-t b br,.nw-o b br{display:none}}
+
+/* numbers: soft deep-sea shade so the label and figures read on the photo */
+.stx-media::after{background:
+  linear-gradient(90deg,rgba(13,60,70,.55) 0%,rgba(13,60,70,.2) 45%,rgba(13,60,70,0) 70%),
+  linear-gradient(180deg,rgba(13,60,70,.6) 0%,rgba(13,60,70,.35) 30%,rgba(13,60,70,.5) 55%,rgba(13,60,70,.88) 80%,rgba(13,60,70,.96) 100%)}
