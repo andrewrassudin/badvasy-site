@@ -152,3 +152,12 @@
     g.classList.remove('wf-measure'); g.style.setProperty('--wf-h', h + 'px'); };
   fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
 })();
+
+/* brands accordion: the last hovered card stays open, so moving across gaps never collapses the row */
+(() => {
+  const g = document.querySelector('.bxgrid'); if (!g) return;
+  const cards = [...g.querySelectorAll('.bx')]; if (!cards.length) return;
+  const set = c => cards.forEach(x => x.classList.toggle('is-on', x === c));
+  set(cards[0]);
+  cards.forEach(c => { c.addEventListener('mouseenter', () => set(c)); c.addEventListener('focus', () => set(c)); });
+})();

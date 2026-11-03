@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" href="../assets/fonts/fixel-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/fixel-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="v2.css?v=45">
+<link rel="stylesheet" href="v2.css?v=52">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -69,8 +69,7 @@
       <nav class="nav" aria-label="Головне меню">
         <ul>
           <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-about">Про компанію<svg><use href="#chev"/></svg></button></li>
-          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-dist">Дистрибуція<svg><use href="#chev"/></svg></button></li>
-          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-prod">Виробництво<svg><use href="#chev"/></svg></button></li>
+          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-act">Діяльність<svg><use href="#chev"/></svg></button></li>
           <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-brands">Власні бренди<svg><use href="#chev"/></svg></button></li>
           <li class="ni"><a class="nl" href="#">Новини</a></li>
           <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-part">Партнерам<svg><use href="#chev"/></svg></button></li>
@@ -79,7 +78,9 @@
       </nav>
       <div class="bar-act">
         <button class="ib" aria-label="Пошук"><svg><use href="#search"/></svg></button>
+        <div class="lang lang-bar" role="group" aria-label="Мова"><button class="is-on" aria-pressed="true">UA</button><button aria-pressed="false" title="Англійська версія — незабаром">EN</button></div>
         <a class="btn btn-out" href="#">Стати партнером</a>
+        <a class="btn btn-y btn-portal" href="#"><svg><use href="#user"/></svg>Увійти в портал</a>
         <a class="ib ib-portal" href="#" aria-label="Портал"><svg><use href="#user"/></svg></a>
         <button class="ib burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span></button>
       </div>
@@ -97,15 +98,10 @@
             <a class="mi" href="#"><i><svg><use href="#heart"/></svg></i><b>КСВ</b><span>Соціальна відповідальність</span></a></div>
           <a class="mcard" href="#"><img src="../assets/img/team.jpg" alt=""><span><b>BADVASY Education</b>Інвестиції в професіоналів, які творять майбутнє →</span></a>
         </div>
-        <div class="mega-p" id="m-dist">
+        <div class="mega-p mega-p4" id="m-act">
           <div class="mcol"><a class="mh" href="#">Дистрибуція <svg><use href="#arr"/></svg></a>
             <a class="mi" href="#"><i><svg><use href="#hand"/></svg></i><b>Партнери</b><span>≈ 30 партнерів-виробників</span></a>
             <a class="mi" href="#"><i><svg><use href="#grid"/></svg></i><b>Продуктовий портфель</b><span>≈ 1000 SKU у дистриб’юторському портфелі</span></a></div>
-          <div class="mcol mcol-logos"><span class="mh">Офіційно дистриб’ютуємо</span>
-            <div class="mlogos"><span>SYNGENTA</span><span>BAYER</span><span>BASF</span><span>ADAMA</span><span>NUFARM</span><span>FMC</span><span>YARA</span><span>Protect Garden</span></div></div>
-          <a class="mcard" href="#"><img src="../assets/img/field.jpg" alt=""><span><b>Каталог продукції</b>Переглянути портфель →</span></a>
-        </div>
-        <div class="mega-p" id="m-prod">
           <div class="mcol"><a class="mh" href="#">Виробничо-складський комплекс <svg><use href="#arr"/></svg></a>
             <a class="mi" href="#"><i><svg><use href="#factory"/></svg></i><b>Про комплекс</b><span>«Родниківка», 2,3 га</span></a>
             <a class="mi" href="#"><i><svg><use href="#grid"/></svg></i><b>Інфраструктура</b><span>Цехи фасування та складська інфраструктура</span></a></div>
@@ -127,7 +123,7 @@
           <div class="mcol"><a class="mh" href="#">Партнерам <svg><use href="#arr"/></svg></a>
             <a class="mi" href="#"><i><svg><use href="#hand"/></svg></i><b>Партнерство з нами</b><span>Умови та як стати партнером</span></a>
             <a class="mi" href="#"><i><svg><use href="#doc"/></svg></i><b>Юридична інформація</b><span>Реквізити та документи</span></a></div>
-          <div class="mcol"><span class="mh">Для клієнтів</span>
+          <div class="mcol"><a class="mh" href="#">Для клієнтів <svg><use href="#arr"/></svg></a>
             <a class="mi" href="#"><i class="y"><svg><use href="#user"/></svg></i><b>Портал BADVASY</b><span>Бізнес-кабінет нашого клієнта</span></a></div>
           <a class="mcard" href="#"><img src="../assets/img/team-3.jpg" alt=""><span><b>БАДВАСИ — партнерство, у якому виграють усі</b>Як стати партнером →</span></a>
         </div>
@@ -141,14 +137,14 @@
   <div class="mob" id="mob" hidden>
     <div class="wrap">
       <details><summary>Про компанію</summary><a href="#">Місія, цінності, візія</a><a href="#">Історія</a><a href="#">Команда та кар’єра</a><a href="#">КСВ</a></details>
-      <details><summary>Дистрибуція</summary><a href="#">Партнери</a><a href="#">Продуктовий портфель</a></details>
-      <details><summary>Виробництво</summary><a href="#">Про комплекс</a><a href="#">Інфраструктура</a><a href="#">Контрактне фасування</a></details>
+      <details><summary>Діяльність</summary><a href="#">Партнери</a><a href="#">Продуктовий портфель</a><a href="#">Про комплекс</a><a href="#">Інфраструктура</a><a href="#">Контрактне фасування</a><a href="#">Відповідальне зберігання</a></details>
       <details><summary>Власні бренди</summary><a href="#">ProtectON</a><a href="#">Presence</a><a href="#">UniSept</a><a href="#">Argumin</a></details>
       <a class="mob-l" href="#">Новини</a>
       <details><summary>Партнерам</summary><a href="#">Партнерство з нами</a><a href="#">Юридична інформація</a></details>
       <a class="mob-l" href="#">Контакти</a>
       <a class="btn btn-y btn-block" href="#">Увійти в портал</a>
       <a class="btn btn-out btn-block" href="#">Стати партнером</a>
+      <div class="lang mob-lang" role="group" aria-label="Мова"><button class="is-on" aria-pressed="true">UA</button><button aria-pressed="false">EN</button></div>
     </div>
   </div>
 </header>
@@ -349,25 +345,25 @@
     <div class="bxgrid">
       <a class="bx rv" href="#" style="--c:#0D3C46">
         <img src="../assets/img/field.jpg" alt="" loading="lazy" style="object-position:center 70%">
-        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-tint"></span><span class="bx-arr" aria-hidden="true"><svg><use href="#arr"/></svg></span><span class="bx-blur"></span>
         <span class="bx-top"><em>Засоби захисту рослин</em><i>з 2019</i></span>
         <span class="bx-c"><b>ProtectON</b><span class="bx-d">Власне виробництво лінійки засобів захисту рослин</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
       </a>
       <a class="bx rv" href="#" style="--c:#232323;--d:0.06s">
         <img src="../assets/img/complex.jpg" alt="" loading="lazy" style="object-position:center">
-        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-tint"></span><span class="bx-arr" aria-hidden="true"><svg><use href="#arr"/></svg></span><span class="bx-blur"></span>
         <span class="bx-top"><em>Промисловий сектор</em><i>з 2019</i></span>
         <span class="bx-c"><b>Presence</b><span class="bx-d">Засоби захисту рослин Presence Technology для промислового сектору</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
       </a>
       <a class="bx rv" href="#" style="--c:#267783;--d:0.12s">
         <img src="../assets/img/complex-2.jpg" alt="" loading="lazy" style="object-position:center">
-        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-tint"></span><span class="bx-arr" aria-hidden="true"><svg><use href="#arr"/></svg></span><span class="bx-blur"></span>
         <span class="bx-top"><em>Біодеструктори</em><i>з 2023</i></span>
         <span class="bx-c"><b>UniSept</b><span class="bx-d">Лінійка біодеструкторів UNISEPT</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
       </a>
       <a class="bx rv" href="#" style="--c:#6F5746;--d:0.18s">
         <img src="../assets/img/field.jpg" alt="" loading="lazy" style="object-position:15% 20%">
-        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-tint"></span><span class="bx-arr" aria-hidden="true"><svg><use href="#arr"/></svg></span><span class="bx-blur"></span>
         <span class="bx-top"><em>Добрива</em><i>з 2014</i></span>
         <span class="bx-c"><b>Argumin</b><span class="bx-d">Органо-мінеральні добрива ARGUMIN та рідкі ARGUMIN FORMULA</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
       </a>
@@ -526,6 +522,6 @@
   </div>
 </footer>
 
-<script src="v2.js?v=30" defer></script>
+<script src="v2.js?v=31" defer></script>
 </body>
 </html>

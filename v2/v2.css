@@ -1324,3 +1324,67 @@ b,strong{font-weight:600}
 .bar{padding-bottom:12px}
 .mega,.hdr.is-stuck .mega{top:calc(100% - 12px)}
 @media (max-width:720px){.bar{padding-bottom:8px}}
+
+/* laconic header: no utility row, language + portal live in the bar */
+.util{display:none}
+.mega-foot{display:none}
+.bar-act{gap:8px}
+.lang-bar{margin:0 4px}
+.bar-act .btn-portal{height:44px;padding:0 18px;gap:8px}
+.bar-act .btn-portal svg{width:16px;height:16px}
+.bar-act .btn-out::before{display:none}
+.lang-bar{position:relative;padding-right:14px;margin-right:6px}
+.lang-bar::after{content:"";position:absolute;right:0;top:50%;width:1px;height:24px;margin-top:-12px;background:var(--line)}
+.bar-act .btn-out{margin-left:0}
+@media (max-width:1328px){.bar-act .btn-out{display:none}}
+@media (max-width:1100px){.bar-act .btn-portal,.lang-bar{display:none}}
+.mega-p4{grid-template-columns:1fr 1fr 1fr 280px}
+.bar-act>.btn-out{display:none}
+.mob-lang{margin-top:12px;justify-content:center}
+
+/* header between 1101 and 1280: portal as an icon so the bar never overflows */
+@media (min-width:1101px) and (max-width:1300px){.bar-act .btn-portal{display:none}.bar-act .ib-portal{display:grid}}
+
+/* brands accordion v2 — JS keeps one card active (no flicker in the gaps),
+   photo keeps its size (no rescaling), no live blur, one calm curve */
+.bx-arr{position:absolute;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--sea);display:grid;place-items:center;z-index:2;transition:background-color .4s var(--e)}
+.bx-arr svg{width:16px;height:16px;transition:transform .4s var(--e)}
+.bx:hover .bx-arr{background:var(--lemon)}
+.bx:hover .bx-arr svg{transform:translateX(2px)}
+@media (min-width:1101px) and (hover:hover){
+  .bx,.bxgrid:not(:hover) .bx:first-child,.bxgrid .bx:hover{flex-grow:1;transition:flex-grow .6s cubic-bezier(.25,.1,.25,1)}
+  .bxgrid .bx.is-on{flex-grow:2.4}
+  .bx>img,.bx:hover>img{left:50%;width:720px;max-width:none;transform:translateX(-50%);transition:none}
+  .bx-blur{display:none}
+  .bx-tint{background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,transparent 30%,color-mix(in srgb,var(--c) 60%,transparent) 62%,var(--c) 100%)}
+  .bx-top{right:auto}
+  .bx-top i{position:absolute;left:auto;right:0;top:0;white-space:nowrap}
+  .bx-top{right:20px}
+  .bx-c{bottom:24px;padding-right:56px;width:400px}
+  .bx-btn,.bxgrid .bx.is-on .bx-btn,.bxgrid:not(:hover) .bx:first-child .bx-btn,.bxgrid .bx:hover .bx-btn{display:none}
+  /* reset the earlier hover-driven states; only .is-on decides */
+  .bx-d,.bxgrid:not(:hover) .bx:first-child .bx-d,.bxgrid .bx:hover .bx-d{max-height:0;margin-top:0;opacity:0;transition:opacity .3s var(--e),max-height .6s cubic-bezier(.25,.1,.25,1),margin .6s cubic-bezier(.25,.1,.25,1)}
+  .bxgrid .bx.is-on .bx-d{max-height:90px;margin-top:10px;opacity:1;transition:opacity .4s var(--e) .2s,max-height .6s cubic-bezier(.25,.1,.25,1),margin .6s cubic-bezier(.25,.1,.25,1)}
+  .bx-top i,.bxgrid:hover .bx:not(:hover) .bx-top i,.bxgrid:not(:hover) .bx:not(:first-child) .bx-top i{opacity:0;transition:opacity .3s var(--e)}
+  .bxgrid .bx.is-on .bx-top i{opacity:1;transition:opacity .4s var(--e) .2s}
+}
+
+/* primary buttons: deep sea; lemon stays for accents (chips, tags, icons) */
+.btn-y,.bx-btn{background:var(--sea);color:#fff}
+.btn-y:hover,.bx-btn:hover{background:var(--sky);color:#fff}
+.btn-y svg{color:currentColor}
+/* on dark surfaces the primary button turns white */
+.ftr2 .btn-y,.stx .btn-y{background:#fff;color:var(--sea)}
+.ftr2 .btn-y:hover,.stx .btn-y:hover{background:var(--soft);color:var(--sea)}
+@media (min-width:1101px) and (hover:hover){.bxgrid>.bx.is-on{flex-grow:2.4!important}.bxgrid>.bx:not(.is-on){flex-grow:1!important}}
+@media (min-width:1101px) and (hover:hover){
+  .bx-c b{display:block;transform:scale(.74);transform-origin:left bottom;transition:transform .6s cubic-bezier(.25,.1,.25,1);white-space:nowrap}
+  .bxgrid>.bx.is-on .bx-c b{transform:none}
+  .bx-arr{width:40px;height:40px}
+}
+@media (min-width:1101px) and (hover:hover){
+  .bxgrid>.bx.is-on .bx-d{max-height:90px!important;margin-top:10px!important;opacity:1!important}
+  .bxgrid>.bx.is-on .bx-top i{opacity:1!important}
+  .bxgrid>.bx:not(.is-on) .bx-d{max-height:0!important;margin-top:0!important;opacity:0!important}
+  .bxgrid>.bx:not(.is-on) .bx-top i{opacity:0!important}
+}
