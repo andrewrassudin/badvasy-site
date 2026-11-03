@@ -1392,3 +1392,10 @@ b,strong{font-weight:600}
 .ngr>*,.nw-t{min-width:0}
 .nw-m{max-width:100%}
 @media (max-width:720px){.ngr{grid-template-columns:minmax(0,1fr)}}
+
+/* first screen: white under the menu, tinted plate, photo as a standalone rounded card */
+.hdr:not(.is-stuck) .bar{background:#fff}
+.hdr:not(.is-stuck) .bar>.bar-in{background:var(--canvas)}
+.bar{transition:background-color .45s var(--e)}
+.hero .s-media{margin:0 max(var(--gut),calc((100vw - var(--wrap))/2)) 0 0;border-radius:12px;isolation:isolate}
+@media (max-width:1100px){.hero .s-media{margin:0 var(--gut)}}
