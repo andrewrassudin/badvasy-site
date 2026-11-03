@@ -963,3 +963,52 @@ a.mh:hover svg{transform:translateX(3px)}
 .f2-mark span{font-size:clamp(56px,13.6vw,196px);line-height:.78}
 .f2-contacts{border-left:0;padding-left:0}
 @media (max-width:1100px){.f2-contacts{border-top:0;padding-top:0}}
+
+/* ---- "БАДВАСИ — це": editorial 4-column panel ---- */
+.quick{display:none}
+.abx{margin-top:16px;background:#fff;border-radius:12px;box-shadow:var(--sh-1);padding:28px 8px 8px}
+.abx-h{padding:0 28px 20px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.abx-h::before{content:"";width:24px;height:2px;border-radius:2px;background:var(--lemon)}
+.abx-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.ab{position:relative;display:flex;flex-direction:column;gap:10px;padding:24px 24px 26px;border-radius:10px;transition:background-color var(--t) var(--e)}
+.ab+.ab::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:1px;background:var(--line);transition:opacity var(--t) var(--e)}
+.ab::after{content:"";position:absolute;left:24px;right:24px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--lemon);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--e)}
+.ab:hover{background:var(--canvas)}
+.ab:hover::after{transform:scaleX(1)}
+.ab:hover::before,.ab:hover+.ab::before{opacity:0}
+.ab-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.ab-top i{width:48px;height:48px;border-radius:50%;background:var(--soft);color:var(--sky);display:grid;place-items:center;transition:background-color var(--t) var(--e),color var(--t) var(--e)}
+.ab-top i svg{width:22px;height:22px}
+.ab:hover .ab-top i{background:var(--sea);color:var(--lemon)}
+.ab-top em{font-style:normal;font-weight:500;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ab b{font-weight:800;font-size:19px;line-height:1.25;color:var(--ink);letter-spacing:-.01em}
+.ab-d{font-size:14.5px;line-height:1.55;color:var(--muted)}
+.ab-more{margin-top:auto;padding-top:8px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:var(--sky);opacity:0;transform:translateY(4px);transition:opacity var(--t) var(--e),transform var(--t) var(--e)}
+.ab-more svg{width:15px;height:15px}
+.ab:hover .ab-more{opacity:1;transform:none}
+@media (hover:none){.ab-more{opacity:1;transform:none}}
+@media (max-width:1100px){.abx-row{grid-template-columns:1fr 1fr}.ab:nth-child(3)::before{display:none}}
+@media (max-width:720px){.abx{padding:20px 4px 4px}.abx-h{padding:0 18px 12px}.abx-row{grid-template-columns:1fr}.ab{padding:18px}.ab+.ab::before{left:18px;right:18px;top:0;bottom:auto;width:auto;height:1px}}
+
+/* ---- airy utility row: no plates ---- */
+.util-in{height:48px}
+.aud{background:none;padding:0;gap:24px;border-radius:0}
+.aud-b{position:relative;height:auto;padding:6px 0;border-radius:0;background:none!important;box-shadow:none!important;color:var(--muted)}
+.aud-b::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--lemon);transform:scaleX(0);transform-origin:left;transition:transform var(--t) var(--e)}
+.aud-b.is-on{color:var(--sea)}
+.aud-b.is-on::after,.aud-b:hover::after{transform:scaleX(1)}
+.lang{background:none;padding:0;gap:2px;border-radius:0}
+.lang button{background:none!important;box-shadow:none!important;padding:0 6px;height:24px}
+.lang button.is-on{color:var(--sea)}
+.lang button+button{border-left:1px solid var(--line);border-radius:0}
+
+/* ---- hero: full-bleed, edge to edge ---- */
+.hero{padding-top:16px}
+.hero .slider{width:100vw;margin-left:calc(50% - 50vw);border-radius:0;box-shadow:none}
+.slide{min-height:min(calc(100vh - 150px),760px);grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.s-copy{padding-left:max(var(--gut),calc((100vw - var(--wrap))/2));padding-right:56px}
+.s-ctrl{left:max(var(--gut),calc((100vw - var(--wrap))/2))}
+@media (max-width:1100px){.s-copy{padding-left:var(--gut);padding-right:var(--gut)}.slide{min-height:0}}
+@media (max-width:720px){.util-in{height:auto}.aud{gap:16px;width:100%;justify-content:space-between}.aud-b{flex:none;font-size:12.5px}}
+@media (max-width:1100px){.slide{grid-template-columns:1fr}}
+@media (max-width:720px){.aud{gap:12px;justify-content:flex-start;overflow-x:auto}.aud-b{font-size:12px}}
