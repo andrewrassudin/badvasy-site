@@ -1388,3 +1388,7 @@ b,strong{font-weight:600}
   .bxgrid>.bx:not(.is-on) .bx-d{max-height:0!important;margin-top:0!important;opacity:0!important}
   .bxgrid>.bx:not(.is-on) .bx-top i{opacity:0!important}
 }
+/* news: never wider than the screen on small phones */
+.ngr>*,.nw-t{min-width:0}
+.nw-m{max-width:100%}
+@media (max-width:720px){.ngr{grid-template-columns:minmax(0,1fr)}}
