@@ -1,11 +1,11 @@
 # BADVASY — головна сторінка
 
-Статична верстка (HTML/CSS/JS без збірки). Відкрити `index.html` через будь-який веб-сервер або GitHub Pages.
+Статична верстка (HTML/CSS/JS без збірки), дві версії:
 
-- `index.html` — розмітка головної
-- `assets/styles.css` — стилі (бренд-токени, анімації з Apple-кривими `cubic-bezier(.32,.72,0,1)` / `(.25,.1,.25,1)`)
-- `assets/main.js` — шапка, дропдауни, лічильники, вкладки, таймлайн, хотспоти
+- `v2/` — версія 2: `index.html`, `v2.css`, `v2.js`
+- `v3/` — версія 3: `index.html`, `v3.css`, `v3.js`
+- `index.html` у корені — переадресація на `v3/`
 - `assets/fonts` — Fixel Display (500/600/800)
-- `assets/img` — фото з брендбуку (тимчасові, замінити на фінальні)
+- `assets/img` — фото `badvasy-01…10.jpg` і `topo.svg`
 
-Локально: `python3 -m http.server` і відкрити http://localhost:8000
+Локально: `python3 -m http.server 8123` і відкрити http://localhost:8123/v3/ або /v2/
