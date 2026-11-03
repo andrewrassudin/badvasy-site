@@ -19,7 +19,7 @@
 
   /* ---------- header: stuck state ---------- */
   const hdr = $('#hdr'), bar = $('.bar');
-  const onScroll = () => hdr.classList.toggle('is-stuck', bar.getBoundingClientRect().top <= 12.5 && scrollY > 40);
+  const onScroll = () => hdr.classList.toggle('is-stuck', bar.getBoundingClientRect().top <= 0.5 && scrollY > 60);
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   /* ---------- mega menu ---------- */
