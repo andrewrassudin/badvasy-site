@@ -1024,3 +1024,47 @@ a.mh:hover svg{transform:translateX(3px)}
 @media (max-width:720px){.hdr.is-stuck .bar>.bar-in{transform:translateY(8px)}}
 .ab-top em{display:none}
 .ab::after{top:auto;bottom:0;border-radius:3px 3px 0 0}
+
+/* =========================================================
+   POLISH PASS — soft double shadows, light surfaces, white icon chips
+   (ref: soft neumorphic-light UI; brand colours kept)
+   ========================================================= */
+:root{
+  --canvas:#F2F5F5;
+  --sh-1:0 0 0 1px rgba(13,60,70,.04),0 1px 2px rgba(13,60,70,.04),0 10px 24px -14px rgba(13,60,70,.16);
+  --sh-2:0 0 0 1px rgba(13,60,70,.05),0 2px 4px rgba(13,60,70,.04),0 22px 44px -24px rgba(13,60,70,.28);
+  --sh-chip:0 1px 0 rgba(255,255,255,.9) inset,0 1px 2px rgba(13,60,70,.06),0 6px 14px -8px rgba(13,60,70,.22);
+}
+/* white surfaces get a hairline top highlight = the "double" look */
+.slider,.abx,.dc,.portal,.cform,.cinfo,.qrc,.tl li,.nw-big,.st2,.bar>.bar-in{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-1)}
+.dc:hover,.tl li:hover,.qrc:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
+.hdr.is-stuck .bar>.bar-in{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
+.hero .slider{box-shadow:none}
+
+/* icon chips: white circles with soft lift, as in the reference */
+.ab-top i,.pt-ic,.cinfo i,.ni2,.mi i,.pcap i,.fi{background:#fff;border-radius:50%;box-shadow:var(--sh-chip);color:var(--sea)}
+.wf i{border-radius:50%;box-shadow:var(--sh-chip)}
+.ab:hover .ab-top i{background:var(--sea);color:var(--lemon);box-shadow:0 8px 18px -8px rgba(13,60,70,.5)}
+.pt-grid li.y .pt-ic,.pcap i.y,.fi.y{background:var(--lemon);color:var(--sea)}
+.pt-grid li{background:var(--canvas)}
+.pt-grid li:hover .pt-ic{background:#fff}
+.mi:hover i{background:var(--sea);color:var(--lemon);box-shadow:none}
+
+/* hairline-bordered light panels instead of flat grey blocks */
+.pt-grid li,.fl input,.seg span{box-shadow:inset 0 0 0 1px rgba(13,60,70,.05)}
+.fl input:focus{box-shadow:inset 0 0 0 1.5px var(--sky),0 0 0 4px rgba(38,119,131,.1)}
+
+/* softer floating chips on photos */
+.float,.st-tag,.bx-top em{box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 24px -12px rgba(13,60,70,.35)}
+
+/* buttons: subtle depth */
+.btn-y{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 1px 2px rgba(110,100,0,.18)}
+.btn-y:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 22px -12px rgba(150,140,0,.65)}
+.btn-ghost{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.btn-ghost:hover{background:var(--canvas)}
+.sc-b{background:#fff;box-shadow:var(--sh-chip)}
+
+/* typographic rhythm: section eyebrow + consistent heading spacing */
+.sec-head{margin-bottom:32px}
+.center-head{margin-bottom:44px}
+.h2{letter-spacing:-.025em}
