@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BADVASY — дистрибуція та фасування ЗЗР і добрив (v2)</title>
+<meta name="description" content="БАДВАСИ — національна компанія, дистриб’ютор та виробник засобів захисту рослин і добрив. З 2006 року.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="../assets/fonts/fixel-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/fixel-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="v2.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="bmark" viewBox="5 5 565 310"><path fill="currentColor" d="M16 6H500C541 6 569 36 569 88C569 124 548 148 499 158C548 168 569 194 569 232C569 284 541 314 500 314H16Q6 314 6 304V292A36 36 0 0 1 41 256V64A36 36 0 0 1 6 28V16Q6 6 16 6Z"/></symbol>
+  <symbol id="arr" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="arr-up" viewBox="0 0 16 16"><path d="M5 11l6-6M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="chev" viewBox="0 0 12 12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5l4 4"/></g></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.2-3.8 4.2-6 7.5-6s6.3 2.2 7.5 6"/></g></symbol>
+  <symbol id="store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3"/></g></symbol>
+  <symbol id="factory" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10l5 3V10l5 3V6h4v14zM3 20h18M17 20V4h3v16"/></g></symbol>
+  <symbol id="truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7"/><circle cx="6" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></g></symbol>
+  <symbol id="box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></g></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19l7-7"/></g></symbol>
+  <symbol id="hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l4-5 4 2 3-2 4 1 5 4"/><path d="M6 7l-4 5 5 5 2-1 2 2 2-1 2 1 3-3 4-4"/><path d="M10 9l-2 3 1.5 1L12 11l3 3"/></g></symbol>
+  <symbol id="headset" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></g></symbol>
+  <symbol id="grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="3.5"/></g></symbol>
+  <symbol id="shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+  <symbol id="doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></g></symbol>
+  <symbol id="people" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c.8-3.2 3.2-5 6-5s5.2 1.8 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.4 0 4.3 1.6 5 4"/></g></symbol>
+  <symbol id="history" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 103-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></g></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></g></symbol>
+  <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></g></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="ig" viewBox="0 0 20 20"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/><circle cx="14.3" cy="5.8" r=".9" fill="currentColor"/></g></symbol>
+  <symbol id="fb" viewBox="0 0 20 20"><path fill="currentColor" d="M11.2 17v-6h2l.3-2.4h-2.3V7.1c0-.7.2-1.2 1.2-1.2h1.2V3.8c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.8H6.8V11h2v6h2.4z"/></symbol>
+  <symbol id="spark" viewBox="0 0 20 20"><path d="M10 1l2 7 7 2-7 2-2 7-2-7-7-2 7-2z" fill="currentColor"/></symbol>
+</defs></svg>
+
+<a class="skip" href="#main">Перейти до змісту</a>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <div class="util">
+    <div class="wrap util-in">
+      <div class="aud" role="tablist" aria-label="Для кого">
+        <button class="aud-b is-on" role="tab" aria-selected="true" data-aud="0"><svg><use href="#store"/></svg>Агромагазинам</button>
+        <button class="aud-b" role="tab" aria-selected="false" data-aud="1"><svg><use href="#factory"/></svg>Виробникам</button>
+        <button class="aud-b" role="tab" aria-selected="false" data-aud="2"><svg><use href="#truck"/></svg>Дистриб’юторам</button>
+      </div>
+      <div class="util-r">
+        <a class="util-l" href="tel:+380445381663"><svg><use href="#phone"/></svg>+38 (044) 538-16-63</a>
+        <div class="lang" role="group" aria-label="Мова"><button class="is-on" aria-pressed="true">UA</button><button aria-pressed="false" title="Англійська версія — незабаром">EN</button></div>
+        <a class="util-portal" href="#"><svg><use href="#user"/></svg>Увійти в портал</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div class="wrap bar-in">
+      <a class="logo" href="#" aria-label="BADVASY — на головну">
+        <svg viewBox="5 5 565 310"><use href="#bmark" class="lb"/><text x="89" y="268" font-family="Fixel Display" font-weight="800" font-size="98" textLength="416" lengthAdjust="spacingAndGlyphs" fill="#fff">BADVASY</text></svg>
+      </a>
+      <nav class="nav" aria-label="Головне меню">
+        <ul>
+          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-about">Про компанію<svg><use href="#chev"/></svg></button></li>
+          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-dist">Дистрибуція<svg><use href="#chev"/></svg></button></li>
+          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-prod">Виробництво<svg><use href="#chev"/></svg></button></li>
+          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-brands">Власні бренди<svg><use href="#chev"/></svg></button></li>
+          <li class="ni"><a class="nl" href="#">Новини</a></li>
+          <li class="ni has-mega"><button class="nl" aria-expanded="false" data-mega="m-part">Партнерам<svg><use href="#chev"/></svg></button></li>
+          <li class="ni"><a class="nl" href="#">Контакти</a></li>
+        </ul>
+      </nav>
+      <div class="bar-act">
+        <button class="ib" aria-label="Пошук"><svg><use href="#search"/></svg></button>
+        <a class="btn btn-out" href="#">Стати партнером</a>
+        <a class="ib ib-portal" href="#" aria-label="Портал"><svg><use href="#user"/></svg></a>
+        <button class="ib burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+
+    <!-- Mega menus (Yasno-style) -->
+    <div class="mega" id="mega" aria-hidden="true">
+      <div class="wrap"><div class="mega-box">
+        <div class="mega-p" id="m-about">
+          <div class="mcol"><a class="mh" href="#">Про компанію <svg><use href="#arr"/></svg></a>
+            <a class="mi" href="#"><i><svg><use href="#target"/></svg></i><b>Місія, цінності, візія</b><span>Філософія WIN-WIN та принципи роботи</span></a>
+            <a class="mi" href="#"><i><svg><use href="#history"/></svg></i><b>Історія</b><span>19 років: від першого офісу до лідера ринку</span></a></div>
+          <div class="mcol"><a class="mh" href="#">Люди <svg><use href="#arr"/></svg></a>
+            <a class="mi" href="#"><i><svg><use href="#people"/></svg></i><b>Команда та кар’єра</b><span>60+ фахівців і BADVASY Education</span></a>
+            <a class="mi" href="#"><i><svg><use href="#heart"/></svg></i><b>КСВ</b><span>Соціальна відповідальність</span></a></div>
+          <a class="mcard" href="#"><img src="../assets/img/team.jpg" alt=""><span><b>Ми шукаємо таланти</b>Відкриті вакансії →</span></a>
+        </div>
+        <div class="mega-p" id="m-dist">
+          <div class="mcol"><a class="mh" href="#">Дистрибуція <svg><use href="#arr"/></svg></a>
+            <a class="mi" href="#"><i><svg><use href="#hand"/></svg></i><b>Партнери</b><span>Syngenta, Bayer, BASF, FMC та ще ≈ 25 виробників</span></a>
+            <a class="mi" href="#"><i><svg><use href="#grid"/></svg></i><b>Продуктовий портфель</b><span>≈ 1000 SKU: гербіциди, інсектициди, фунгіциди, добрива</span></a></div>
+          <div class="mcol mcol-logos"><span class="mh">Офіційно дистриб’ютуємо</span>
+            <div class="mlogos"><span>Syngenta</span><span>Bayer</span><span>BASF</span><span>Corteva</span><span>ADAMA</span><span>FMC</span><span>Nufarm</span><span>YARA</span></div></div>
+          <a class="mcard" href="#"><img src="../assets/img/field.jpg" alt=""><span><b>Каталог продукції</b>Переглянути портфель →</span></a>
+        </div>
+        <div class="mega-p" id="m-prod">
+          <div class="mcol"><a class="mh" href="#">Виробничо-складський комплекс <svg><use href="#arr"/></svg></a>
+            <a class="mi" href="#"><i><svg><use href="#factory"/></svg></i><b>Про комплекс</b><span>«Родниківка», 2,3 га</span></a>
+            <a class="mi" href="#"><i><svg><use href="#grid"/></svg></i><b>Інфраструктура</b><span>Цехи, 7 ліній фасування, склад</span></a></div>
+          <div class="mcol"><a class="mh" href="#">Послуги <svg><use href="#arr"/></svg></a>
+            <a class="mi" href="#"><i><svg><use href="#box"/></svg></i><b>Контрактне фасування</b><span>Від 1,2 мл до 1 л «під ключ»</span></a>
+            <a class="mi" href="#"><i><svg><use href="#shield"/></svg></i><b>Відповідальне зберігання</b><span>Контроль термінів і відвантажень</span></a></div>
+          <a class="mcard" href="#"><img src="../assets/img/complex-2.jpg" alt=""><span><b>Ваш продукт — наш досвід</b>Замовити фасування →</span></a>
+        </div>
+        <div class="mega-p" id="m-brands">
+          <div class="mcol mcol-wide"><a class="mh" href="#">Власні бренди <svg><use href="#arr"/></svg></a>
+            <div class="mbrands">
+              <a href="#" style="--c:#1f5a2e"><b>ProtectON</b><span>ЗЗР для приватного сектору</span></a>
+              <a href="#" style="--c:#232323"><b>Presence</b><span>ЗЗР для промислового сектору</span></a>
+              <a href="#" style="--c:#267783"><b>UniSept</b><span>Біодеструктори</span></a>
+              <a href="#" style="--c:#6F5746"><b>Argumin</b><span>Органо-мінеральні добрива</span></a>
+            </div></div>
+        </div>
+        <div class="mega-p" id="m-part">
+          <div class="mcol"><a class="mh" href="#">Партнерам <svg><use href="#arr"/></svg></a>
+            <a class="mi" href="#"><i><svg><use href="#hand"/></svg></i><b>Партнерство з нами</b><span>Умови та як стати партнером</span></a>
+            <a class="mi" href="#"><i><svg><use href="#doc"/></svg></i><b>Юридична інформація</b><span>Реквізити та документи</span></a></div>
+          <div class="mcol"><span class="mh">Для клієнтів</span>
+            <a class="mi" href="#"><i class="y"><svg><use href="#user"/></svg></i><b>Портал BADVASY</b><span>Замовлення, накладні, сертифікати</span></a></div>
+          <a class="mcard" href="#"><img src="../assets/img/team-3.jpg" alt=""><span><b>Станьте партнером</b>Залишити заявку →</span></a>
+        </div>
+        <div class="mega-foot">
+          <a href="#"><svg><use href="#hand"/></svg>Стати партнером</a><a href="#"><svg><use href="#user"/></svg>Увійти в портал</a><a href="#"><svg><use href="#box"/></svg>Контрактне фасування</a><a href="#"><svg><use href="#phone"/></svg>Зв’язатися з нами</a>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="mob" id="mob" hidden>
+    <div class="wrap">
+      <details><summary>Про компанію</summary><a href="#">Місія, цінності, візія</a><a href="#">Історія</a><a href="#">Команда та кар’єра</a><a href="#">КСВ</a></details>
+      <details><summary>Дистрибуція</summary><a href="#">Партнери</a><a href="#">Продуктовий портфель</a></details>
+      <details><summary>Виробництво</summary><a href="#">Про комплекс</a><a href="#">Інфраструктура</a><a href="#">Контрактне фасування</a></details>
+      <details><summary>Власні бренди</summary><a href="#">ProtectON</a><a href="#">Presence</a><a href="#">UniSept</a><a href="#">Argumin</a></details>
+      <a class="mob-l" href="#">Новини</a>
+      <details><summary>Партнерам</summary><a href="#">Партнерство з нами</a><a href="#">Юридична інформація</a></details>
+      <a class="mob-l" href="#">Контакти</a>
+      <a class="btn btn-y btn-block" href="#">Увійти в портал</a>
+      <a class="btn btn-out btn-block" href="#">Стати партнером</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO SLIDER (Kyivstar split card) ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="slider" data-slider>
+      <div class="slides">
+        <article class="slide is-on">
+          <div class="s-copy">
+            <span class="s-tag">Національна компанія · з 2006 року</span>
+            <h1>Разом ми створюємо те, що необхідно кожному</h1>
+            <p>Дистриб’ютор та виробник засобів захисту рослин і добрив для агромагазинів, виробників і дистриб’юторів по всій Україні.</p>
+            <div class="s-cta"><a class="btn btn-y btn-lg" href="#">Стати партнером <svg><use href="#arr"/></svg></a><a class="btn btn-ghost btn-lg" href="#">Про компанію</a></div>
+          </div>
+          <div class="s-media"><img src="../assets/img/field.jpg" alt="Аерофото агрополів" fetchpriority="high">
+            <div class="float f1"><i class="fi y"><svg><use href="#leaf"/></svg></i><span><b>≈ 1000 SKU</b>у портфелі</span></div>
+            <div class="float f2"><i class="fi"><svg><use href="#store"/></svg></i><span><b>1 200</b>клієнтів</span></div>
+            <svg class="sp sp1"><use href="#spark"/></svg><svg class="sp sp2"><use href="#spark"/></svg>
+          </div>
+        </article>
+        <article class="slide">
+          <div class="s-copy">
+            <span class="s-tag y">Новина · 2025</span>
+            <h2 class="h1">Ексклюзивне фасування BASF для приватного сектору</h2>
+            <p>Ще один крок до зміцнення позицій БАДВАСИ як провідного дистриб’ютора засобів захисту рослин в Україні.</p>
+            <div class="s-cta"><a class="btn btn-y btn-lg" href="#">Детальніше <svg><use href="#arr"/></svg></a></div>
+          </div>
+          <div class="s-media"><img src="../assets/img/complex.jpg" alt="Виробничо-складський комплекс «Родниківка»" loading="lazy">
+            <div class="float f1"><i class="fi y"><svg><use href="#box"/></svg></i><span><b>7 ліній</b>автоматичного фасування</span></div>
+          </div>
+        </article>
+        <article class="slide">
+          <div class="s-copy">
+            <span class="s-tag">Для клієнтів</span>
+            <h2 class="h1">Замовлення, накладні та сертифікати — в одному кабінеті</h2>
+            <p>Портал BADVASY синхронізований з обліковою системою: оформлюйте замовлення в кілька кліків і бачте статус кожного.</p>
+            <div class="s-cta"><a class="btn btn-y btn-lg" href="#">Увійти в портал <svg><use href="#arr"/></svg></a><a class="btn btn-ghost btn-lg" href="#">Отримати доступ</a></div>
+          </div>
+          <div class="s-media s-portal">
+            <div class="pmock">
+              <div class="pm-top"><span>Мої замовлення</span><i>24</i></div>
+              <div class="pm-row"><b>ProtectON · 240 шт</b><em class="ok">Відвантажено</em></div>
+              <div class="pm-row"><b>ARGUMIN · 3 палети</b><em class="pay">До оплати</em></div>
+              <div class="pm-row"><b>Кораген · 120 шт</b><em class="wk">Комплектується</em></div>
+            </div>
+            <svg class="sp sp1"><use href="#spark"/></svg><svg class="sp sp3"><use href="#spark"/></svg>
+          </div>
+        </article>
+      </div>
+      <div class="s-ctrl">
+        <button class="sc-b" data-dir="-1" aria-label="Попередній слайд"><svg style="transform:rotate(180deg)"><use href="#arr"/></svg></button>
+        <span class="sc-n"><b>1</b> / 3</span>
+        <button class="sc-b" data-dir="1" aria-label="Наступний слайд"><svg><use href="#arr"/></svg></button>
+        <span class="sc-bar"><i></i></span>
+      </div>
+    </div>
+
+    <!-- Quick cards (Kyivstar promo row) -->
+    <div class="quick">
+      <a class="qc rv" href="#"><b>Каталог продукції</b><span>≈ 1000 SKU провідних виробників</span>
+        <svg class="qi" viewBox="0 0 120 120" aria-hidden="true"><circle cx="64" cy="62" r="46" class="qb"/><rect x="34" y="44" width="40" height="48" rx="8" class="ql"/><rect x="50" y="30" width="40" height="48" rx="8" class="qf"/><path d="M58 46h24M58 56h24M58 66h14" class="qs"/><circle cx="98" cy="28" r="4" class="qd"/><path d="M24 34l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" class="qy"/></svg></a>
+      <a class="qc rv" href="#" style="--d:.06s"><b>Контрактне фасування</b><span>від 1,2 мл до 1 л «під ключ»</span>
+        <svg class="qi" viewBox="0 0 120 120" aria-hidden="true"><circle cx="62" cy="62" r="46" class="qb"/><rect x="52" y="20" width="20" height="12" rx="3" class="qyf"/><path d="M48 32h28v10c10 4 14 10 14 20v34H34V62c0-10 4-16 14-20z" class="qf"/><rect x="42" y="62" width="40" height="22" rx="5" class="qyf"/><path d="M96 36c0 6-8 10-8 16a8 8 0 0016 0c0-6-8-10-8-16z" class="ql"/></svg></a>
+      <a class="qc rv" href="#" style="--d:.12s"><b>Стати дистриб’ютором</b><span>партнерство за принципом win-win</span>
+        <svg class="qi" viewBox="0 0 120 120" aria-hidden="true"><circle cx="62" cy="62" r="46" class="qb"/><path d="M20 66l18-20 18 8 12-8 18 4 18 16" class="qs2"/><path d="M38 46l-18 20 22 22 8-4 8 8 8-4 8 4 12-12 16-16" class="qs2"/><circle cx="92" cy="26" r="10" class="qyf"/><path d="M88 26l3 3 6-6" class="qs"/></svg></a>
+      <a class="qc rv" href="#" style="--d:.18s"><b>Кар’єра в BADVASY</b><span>60+ фахівців і навчання</span>
+        <svg class="qi" viewBox="0 0 120 120" aria-hidden="true"><circle cx="62" cy="62" r="46" class="qb"/><circle cx="50" cy="48" r="13" class="qf"/><path d="M26 92c3-14 13-22 24-22s21 8 24 22z" class="qf"/><circle cx="82" cy="54" r="10" class="qyf"/><path d="M66 92c2-10 9-16 16-16s14 6 16 16z" class="qyf"/><path d="M98 24l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" class="qy"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGOS ============ -->
+<section class="logos" aria-label="Партнери-виробники">
+  <div class="wrap logos-in">
+    <span class="logos-t">Офіційний дистриб’ютор</span>
+    <div class="mq"><div class="mq-t">
+      <span>Syngenta</span><span>Bayer</span><span>BASF</span><span>Corteva</span><span>ADAMA</span><span>FMC</span><span>Nufarm</span><span>YARA</span><span>SBM Life Science</span><span>Summit Agro</span>
+      <span aria-hidden="true">Syngenta</span><span aria-hidden="true">Bayer</span><span aria-hidden="true">BASF</span><span aria-hidden="true">Corteva</span><span aria-hidden="true">ADAMA</span><span aria-hidden="true">FMC</span><span aria-hidden="true">Nufarm</span><span aria-hidden="true">YARA</span><span aria-hidden="true">SBM Life Science</span><span aria-hidden="true">Summit Agro</span>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ WHY (Uklon layout) ============ -->
+<section class="sec why">
+  <div class="wrap">
+    <div class="center-head rv">
+      <h2 class="h2">BADVASY — це зручно</h2>
+      <p>Усе, що потрібно агромагазину чи виробнику, — в одного партнера</p>
+    </div>
+    <div class="why-grid" data-why>
+      <ul class="why-col left">
+        <li class="wf rv" data-k="0"><div><b>Комплексне обслуговування</b><span>Від підбору продукції до післяпродажного супроводу</span></div><i><svg><use href="#headset"/></svg></i></li>
+        <li class="wf rv" data-k="1" style="--d:.06s"><div><b>Широкий асортимент</b><span>Офіційна дистрибуція і власне виробництво</span></div><i><svg><use href="#grid"/></svg></i></li>
+        <li class="wf rv" data-k="2" style="--d:.12s"><div><b>Зручна логістика</b><span>Швидка доставка по всій Україні</span></div><i><svg><use href="#truck"/></svg></i></li>
+      </ul>
+      <div class="why-phone rv">
+        <div class="phone">
+          <div class="ph-notch"></div>
+          <div class="ph-screen">
+            <div class="ph-h"><svg viewBox="5 5 565 310"><use href="#bmark"/></svg><span>Портал</span></div>
+            <div class="ph-card y"><span>До оплати</span><b>148 200 ₴</b><em>Оплатити за QR →</em></div>
+            <div class="ph-l"><b>№ 10482</b><span>ProtectON · 240 шт</span><em class="ok">✓</em></div>
+            <div class="ph-l"><b>№ 10479</b><span>ARGUMIN · 3 палети</span><em class="pay">₴</em></div>
+            <div class="ph-l"><b>№ 10471</b><span>Кораген · 120 шт</span><em class="wk">⋯</em></div>
+            <div class="ph-btn">Нове замовлення</div>
+          </div>
+        </div>
+        <div class="ring r1"></div><div class="ring r2"></div>
+      </div>
+      <ul class="why-col right">
+        <li class="wf rv is-on" data-k="3"><i><svg><use href="#shield"/></svg></i><div><b>Фінансова стабільність</b><span>Гарантуємо виконання зобов’язань перед партнерами</span></div></li>
+        <li class="wf rv" data-k="4" style="--d:.06s"><i><svg><use href="#doc"/></svg></i><div><b>Документи онлайн</b><span>Накладні з КЕП, сертифікати, акти звірки</span></div></li>
+        <li class="wf rv" data-k="5" style="--d:.12s"><i><svg><use href="#user"/></svg></i><div><b>Персональний менеджер</b><span>Один контакт для всіх питань</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NUMBERS ============ -->
+<section class="sec nums">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 rv">Наша робота в цифрах</h2>
+      <a class="lnk rv" href="#">Про компанію <svg><use href="#arr"/></svg></a>
+    </div>
+    <div class="ngrid">
+      <article class="nc n-big rv">
+        <span class="nl2">Років досвіду</span>
+        <b class="nv"><span data-count="19">19</span></b>
+        <div class="yb" aria-hidden="true"></div>
+        <div class="ya"><span>2006</span><span>2014</span><span>2019</span><span>2025</span></div>
+      </article>
+      <article class="nc rv" style="--d:.04s"><i class="ni2"><svg><use href="#store"/></svg></i><b class="nv"><span data-count="1200">1 200</span></b><span class="nl2">клієнтів</span></article>
+      <article class="nc rv" style="--d:.08s"><i class="ni2"><svg><use href="#grid"/></svg></i><b class="nv">≈<span data-count="1000">1000</span></b><span class="nl2">SKU у дистриб’юторському портфелі</span></article>
+      <article class="nc n-y rv" style="--d:.12s"><i class="ni2"><svg><use href="#hand"/></svg></i><b class="nv">≈<span data-count="30">30</span></b><span class="nl2">партнерів-виробників</span></article>
+      <article class="nc rv" style="--d:.04s"><i class="ni2"><svg><use href="#factory"/></svg></i><b class="nv"><span data-count="120">120</span> т</b><span class="nl2">річна виробнича потужність</span></article>
+      <article class="nc rv" style="--d:.08s"><i class="ni2"><svg><use href="#pin"/></svg></i><b class="nv"><span data-count="2.3" data-dec="1">2,3</span> га</b><span class="nl2">площа виробничих потужностей</span></article>
+      <article class="nc rv" style="--d:.12s"><i class="ni2"><svg><use href="#people"/></svg></i><b class="nv"><span data-count="60">60</span>+</b><span class="nl2">працівників</span></article>
+      <article class="nc n-sea rv" style="--d:.16s"><i class="ni2"><svg><use href="#leaf"/></svg></i><b class="nv"><span data-count="4">4</span> + <span data-count="4">4</span></b><span class="nl2">власні бренди та продуктові колаборації</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIRECTIONS (Yasno cards) ============ -->
+<section class="sec dirs">
+  <div class="wrap">
+    <div class="center-head rv">
+      <h2 class="h2">Обирайте напрям співпраці</h2>
+      <p>Від закупівлі у виробника до полиці агромагазину</p>
+    </div>
+    <div class="dgrid">
+      <article class="dc rv">
+        <div class="dc-img"><img src="../assets/img/field.jpg" alt="" loading="lazy"></div>
+        <div class="dc-b"><div class="dc-h"><h3>Дистрибуція</h3><span class="chip">≈ 1000 SKU</span></div>
+          <ul><li>Офіційні контракти з провідними виробниками</li><li>Гербіциди, інсектициди, фунгіциди, добрива</li><li>Доставка по всій Україні</li></ul>
+          <a class="btn btn-y" href="#">Детальніше</a></div>
+      </article>
+      <article class="dc rv" style="--d:.06s">
+        <div class="dc-img"><img src="../assets/img/complex-2.jpg" alt="" loading="lazy"></div>
+        <div class="dc-b"><div class="dc-h"><h3>Виробничо-складський комплекс</h3><span class="chip sea">2,3 га</span></div>
+          <ul><li>Комплекс «Родниківка» з 2019 року</li><li>Цехи фасування добрив, інсектицидів, гербіцидів</li><li>Автономна робота: сонячна станція, генератори</li></ul>
+          <a class="btn btn-y" href="#">Детальніше</a></div>
+      </article>
+      <article class="dc rv" style="--d:.12s">
+        <div class="dc-img dc-pack" aria-hidden="true">
+          <div class="pk-row">
+            <svg viewBox="0 0 40 56" style="height:44px"><path d="M4 6l4-4 4 4 4-4 4 4 4-4 4 4 4-4 4 4v46H4z" class="pk-s"/><rect x="10" y="22" width="20" height="14" rx="3" class="pk-l"/></svg>
+            <svg viewBox="0 0 56 84" style="height:66px"><path d="M8 4h40v10c0 2 4 6 4 12v52H4V26c0-6 4-10 4-12z" class="pk-s"/><rect x="12" y="40" width="32" height="20" rx="4" class="pk-l"/></svg>
+            <svg viewBox="0 0 44 104" style="height:84px"><rect x="14" y="2" width="16" height="12" rx="3" class="pk-c"/><path d="M12 14h20v8c6 3 10 8 10 16v62H2V38c0-8 4-13 10-16z" class="pk-s"/><rect x="8" y="52" width="28" height="28" rx="4" class="pk-l"/></svg>
+            <svg viewBox="0 0 76 168" style="height:126px"><rect x="26" y="2" width="24" height="16" rx="4" class="pk-c"/><path d="M22 18h32v12c12 6 20 14 20 28v106H2V58c0-14 8-22 20-28z" class="pk-s"/><rect x="12" y="78" width="52" height="50" rx="6" class="pk-l"/></svg>
+          </div>
+          <div class="pk-sc"><span>1,2 мл</span><i></i><span>1 л</span></div>
+        </div>
+        <div class="dc-b"><div class="dc-h"><h3>Контрактне фасування</h3><span class="chip">7 ліній</span></div>
+          <ul><li>Повний цикл «під ключ» або за вашими параметрами</li><li>Саше, дой-пак, флакони, пляшки</li><li>Точність дозування ±0,2 мл</li></ul>
+          <a class="btn btn-y" href="#">Замовити фасування</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRANDS ============ -->
+<section class="sec brands">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 rv">Власні бренди</h2>
+      <a class="lnk rv" href="#">Усі бренди <svg><use href="#arr"/></svg></a>
+    </div>
+    <div class="bgrid">
+      <a class="bc rv" href="#" style="--c:#1f5a2e"><span class="bc-top"><b>ProtectON</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Засоби захисту рослин</em>Лінійка ЗЗР для приватного сектору<span class="bc-f">з 2019 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
+      <a class="bc rv" href="#" style="--c:#232323;--d:.06s"><span class="bc-top"><b>Presence</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Промисловий сектор</em>Presence Technology — ЗЗР для агровиробників<span class="bc-f">з 2019 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
+      <a class="bc rv" href="#" style="--c:#267783;--d:.12s"><span class="bc-top"><b>UniSept</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Біодеструктори</em>Для вигрібних ям, септиків і компосту<span class="bc-f">з 2023 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
+      <a class="bc rv" href="#" style="--c:#6F5746;--d:.18s"><span class="bc-top"><b>Argumin</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Добрива</em>Органо-мінеральні та рідкі добрива<span class="bc-f">з 2014 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTAL with QR (Kyivstar "My Kyivstar") ============ -->
+<section class="sec portal-s">
+  <div class="wrap">
+    <div class="portal rv">
+      <div class="pt-copy">
+        <span class="s-tag">Для клієнтів</span>
+        <h2 class="h2">Портал BADVASY — бізнес-кабінет завжди під рукою</h2>
+        <ul class="ticks">
+          <li>Замовлення з урахуванням кратності ящик / палета</li>
+          <li>Рахунки, видаткові накладні з КЕП, сертифікати на партії</li>
+          <li>Акти звірки, рекламації та персональний менеджер</li>
+        </ul>
+        <div class="s-cta"><a class="btn btn-y btn-lg" href="#">Увійти в портал <svg><use href="#arr"/></svg></a><a class="btn btn-out btn-lg" href="#">Отримати доступ</a></div>
+      </div>
+      <div class="pt-qr">
+        <div class="blob b1"></div><div class="blob b2"></div>
+        <div class="qr-card"><img src="qr-portal.svg" alt="QR-код для переходу в портал" width="180" height="180"><span>Скануйте, щоб відкрити портал на телефоні</span></div>
+        <svg class="sp sp4"><use href="#spark"/></svg><svg class="sp sp5"><use href="#spark"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORY ============ -->
+<section class="sec hist">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 rv">19 років історії</h2>
+      <div class="tl-nav rv"><button class="sc-b" data-tl="-1" aria-label="Назад"><svg style="transform:rotate(180deg)"><use href="#arr"/></svg></button><button class="sc-b" data-tl="1" aria-label="Вперед"><svg><use href="#arr"/></svg></button></div>
+    </div>
+  </div>
+  <div class="tl-vp rv">
+    <ol class="tl">
+      <li><span class="yr">2006</span><p>19 грудня засновано компанію БАДВАСИ</p></li>
+      <li><span class="yr">2008</span><p>Контракти з SYNGENTA та BAYER</p></li>
+      <li><span class="yr">2010</span><p>Представництва у Києві, Тернополі, Донецьку. Постачання в «Епіцентр»</p></li>
+      <li class="hi"><span class="yr">2014</span><p>Запущено бренд добрив ARGUMIN</p></li>
+      <li><span class="yr">2017</span><p>Відділ по роботі з клієнтами, інтеграція з «Новою поштою»</p></li>
+      <li class="hi"><span class="yr">2019</span><p>Presence Technology та власне виробництво ProtectON</p></li>
+      <li><span class="yr">2021</span><p>Пакування ADAMA, NUFARM, BAYER для приватного сектору</p></li>
+      <li><span class="yr">2023</span><p>Колаборація з FMC, ARGUMIN FORMULA, UNISEPT</p></li>
+      <li class="hi y"><span class="yr">2025</span><p>Ребрендинг та ексклюзивне фасування BASF</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="sec news">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 rv">Новини</h2>
+      <a class="lnk rv" href="#">Усі новини <svg><use href="#arr"/></svg></a>
+    </div>
+    <div class="ngr">
+      <a class="nw nw-big rv" href="#"><img src="../assets/img/field.jpg" alt="" loading="lazy"><span class="nw-o"><span class="nw-m"><em>Компанія</em>28 жовтня 2026</span><b>BADVASY отримала ексклюзивні права на фасування продукції BASF</b></span></a>
+      <a class="nw rv" href="#" style="--d:.06s"><span class="nw-i"><img src="../assets/img/team-2.jpg" alt="" loading="lazy"></span><span class="nw-t"><span class="nw-m"><em>Команда</em>14 жовтня 2026</span><b>BADVASY Education: новий цикл тренінгів</b></span></a>
+      <a class="nw rv" href="#" style="--d:.1s"><span class="nw-i"><img src="../assets/img/complex-2.jpg" alt="" loading="lazy"></span><span class="nw-t"><span class="nw-m"><em>Виробництво</em>2 жовтня 2026</span><b>Комплекс «Родниківка» працює автономно</b></span></a>
+      <a class="nw rv" href="#" style="--d:.14s"><span class="nw-i"><img src="../assets/img/team-3.jpg" alt="" loading="lazy"></span><span class="nw-t"><span class="nw-m"><em>Продукти</em>20 вересня 2026</span><b>Нова лінійка біодеструкторів UniSept</b></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT + QR socials ============ -->
+<section class="sec contact">
+  <div class="wrap cgrid">
+    <form class="cform rv" onsubmit="event.preventDefault();this.classList.add('sent')">
+      <h2 class="h2">Станьте партнером BADVASY</h2>
+      <p>Залиште контакти — менеджер зв’яжеться з вами протягом робочого дня.</p>
+      <div class="fr">
+        <label class="fl"><input required placeholder=" " name="n"><span>Ім’я</span></label>
+        <label class="fl"><input required type="tel" placeholder=" " name="p"><span>Телефон</span></label>
+      </div>
+      <label class="fl"><input placeholder=" " name="c"><span>Компанія</span></label>
+      <div class="seg" role="radiogroup" aria-label="Ви">
+        <label><input type="radio" name="t" checked><span>Агромагазин</span></label>
+        <label><input type="radio" name="t"><span>Виробник</span></label>
+        <label><input type="radio" name="t"><span>Дистриб’ютор</span></label>
+      </div>
+      <button class="btn btn-y btn-lg" type="submit">Надіслати заявку <svg><use href="#arr"/></svg></button>
+      <div class="sent-msg"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i><b>Дякуємо!</b><span>Заявку отримано, ми скоро зв’яжемося.</span></div>
+    </form>
+    <div class="cside">
+      <div class="cinfo rv" style="--d:.06s">
+        <a href="tel:+380445381663"><i><svg><use href="#phone"/></svg></i><span><em>Відділ продажів</em>+38 (044) 538-16-63</span></a>
+        <a href="mailto:info@badvasy.com.ua"><i><svg><use href="#mail"/></svg></i><span><em>Email</em>info@badvasy.com.ua</span></a>
+        <div><i><svg><use href="#pin"/></svg></i><span><em>Центральний офіс</em>м. Київ, вул. Метрологічна, 42, секція 42/7</span></div>
+      </div>
+      <div class="qrs">
+        <a class="qrc rv" href="https://www.instagram.com/badvasy.official" target="_blank" rel="noopener" style="--d:.1s"><img src="qr-ig.svg" alt="QR Instagram" width="96" height="96"><span><svg><use href="#ig"/></svg>Instagram</span></a>
+        <a class="qrc rv" href="https://www.facebook.com/share/19veaGVnT8/" target="_blank" rel="noopener" style="--d:.14s"><img src="qr-fb.svg" alt="QR Facebook" width="96" height="96"><span><svg><use href="#fb"/></svg>Facebook</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-b">
+        <a class="logo" href="#" aria-label="BADVASY"><svg viewBox="5 5 565 310"><use href="#bmark" class="lb"/><text x="89" y="268" font-family="Fixel Display" font-weight="800" font-size="98" textLength="416" lengthAdjust="spacingAndGlyphs" fill="#fff">BADVASY</text></svg></a>
+        <p>Національна компанія, дистриб’ютор та виробник засобів захисту рослин і добрив. З 2006 року.</p>
+        <div class="soc"><a href="#" aria-label="Instagram"><svg><use href="#ig"/></svg></a><a href="#" aria-label="Facebook"><svg><use href="#fb"/></svg></a></div>
+      </div>
+      <nav class="ft-cols" aria-label="Карта сайту">
+        <div><h4>Про компанію</h4><a href="#">Місія, цінності, візія</a><a href="#">Історія</a><a href="#">Команда та кар’єра</a><a href="#">КСВ</a></div>
+        <div><h4>Напрями</h4><a href="#">Дистрибуція</a><a href="#">Виробничо-складський комплекс</a><a href="#">Контрактне фасування</a><a href="#">Власні бренди</a></div>
+        <div><h4>Партнерам</h4><a href="#">Партнерство з нами</a><a href="#">Юридична інформація</a><a href="#">Новини</a><a href="#">Портал для клієнтів</a></div>
+      </nav>
+    </div>
+    <div class="ft-bot"><span>© 2006–2026 ТОВ «Бадваси». Усі права захищено.</span><span>Тексти та зображення орієнтовні · <a href="../">Версія 1</a></span></div>
+  </div>
+</footer>
+
+<script src="v2.js" defer></script>
+</body>
+</html>
