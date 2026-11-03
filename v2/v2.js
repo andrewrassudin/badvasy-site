@@ -143,3 +143,12 @@
     t.style.setProperty('--py', Math.min(60, Math.max(0, left * .25)).toFixed(1) + 'px'); };
   addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(par); }, { passive: true }); par();
 })();
+
+/* «Робота з нами»: every row keeps the height of its opened state, so nothing jumps */
+(() => {
+  const g = document.querySelector('[data-why]'); if (!g) return;
+  const fit = () => { g.classList.add('wf-measure');
+    const h = Math.max(...[...g.querySelectorAll('.wf')].map(w => w.offsetHeight));
+    g.classList.remove('wf-measure'); g.style.setProperty('--wf-h', h + 'px'); };
+  fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+})();

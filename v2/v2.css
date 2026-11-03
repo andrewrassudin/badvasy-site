@@ -1207,8 +1207,7 @@ b,strong{font-weight:600}
 
 /* «Робота з нами»: description space is reserved, so neighbours never jump */
 @media (min-width:1101px){
-  .wf span,.wf.is-on span,.wf:hover span{max-height:none;opacity:0;transition:opacity var(--t) var(--e)}
-  .wf.is-on span,.wf:hover span{opacity:1}
+  .wf{min-height:var(--wf-h,0px);align-items:center}
 }
 
 /* mega menu: roomier, ~30% taller */
@@ -1246,3 +1245,5 @@ b,strong{font-weight:600}
 /* flat buttons: no highlights, no glow — colour change only */
 .btn-y,.btn-y:hover,.bx-btn,.util-portal,.util-portal:hover{box-shadow:none}
 .sc-b,.tl-nav .sc-b{box-shadow:inset 0 0 0 1px var(--line)}
+.why-grid.wf-measure .wf span{max-height:none!important;opacity:1!important;transition:none!important}
+.why-grid.wf-measure .wf{transition:none!important;min-height:0!important}
