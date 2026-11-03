@@ -3,6 +3,20 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- stx-scroll: photo zoom + cover progress ---------- */
+  const stx = document.querySelector('.stx'), dirs = document.querySelector('.dirs');
+  if (stx && dirs && !reduce) {
+    const upd = () => {
+      const r = stx.getBoundingClientRect(), vh = innerHeight;
+      const sp = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+      stx.style.setProperty('--sp', sp.toFixed(3));
+      const d = dirs.getBoundingClientRect().top;
+      const cover = Math.min(1, Math.max(0, 1 - d / vh));
+      stx.style.setProperty('--cover', cover.toFixed(3));
+    };
+    addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+  }
+
   /* ---------- header: stuck state ---------- */
   const hdr = $('#hdr'), bar = $('.bar');
   const onScroll = () => hdr.classList.toggle('is-stuck', bar.getBoundingClientRect().top <= 12.5 && scrollY > 40);

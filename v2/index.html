@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" href="../assets/fonts/fixel-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/fixel-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="v2.css?v=14">
+<link rel="stylesheet" href="v2.css?v=16">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -264,34 +264,24 @@
   </div>
 </section>
 
-<!-- ============ NUMBERS ============ -->
-<section class="sec nums">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="h2 rv">Наша робота в цифрах</h2>
-      <a class="lnk rv" href="#">Про компанію <svg><use href="#arr"/></svg></a>
+<!-- ============ NUMBERS (full-bleed photo, sticky) ============ -->
+<section class="stx" id="numbers">
+  <div class="stx-media"><img src="../assets/img/field.jpg" alt="" loading="lazy"></div>
+  <div class="wrap stx-in">
+    <div class="stx-top">
+      <p class="stx-eb rv">Наша робота в цифрах</p>
+      <div class="stx-big rv"><b><span data-count="19">19</span></b><span>років<br>досвіду</span></div>
     </div>
-    <div class="st2 rv">
-      <div class="st-photo">
-        <img src="../assets/img/field.jpg" alt="" loading="lazy">
-        <span class="st-tag">2006 — 2025</span>
-        <div class="st-glass">
-          <div class="st-yr"><b><span data-count="19">19</span></b><span>років<br>досвіду</span></div>
-          <div class="yb" aria-hidden="true"></div>
-          <div class="ya"><span>2006</span><span>2014</span><span>2019</span><span>2025</span></div>
-        </div>
-      </div>
-      <dl class="st-list">
-        <div><dt><span data-count="1200">1 200</span></dt><dd>клієнтів</dd></div>
-        <div><dt>≈<span data-count="1000">1000</span></dt><dd>SKU у дистриб’юторському портфелі</dd></div>
-        <div><dt>≈<span data-count="30">30</span></dt><dd>партнерів</dd></div>
-        <div><dt><span data-count="120">120</span><small>т</small></dt><dd>річні виробничі потужності</dd></div>
-        <div><dt><span data-count="2.3" data-dec="1">2,3</span><small>га</small></dt><dd>загальна площа виробничих потужностей</dd></div>
-        <div><dt><span data-count="60">60</span><em>+</em></dt><dd>працівників</dd></div>
-        <div><dt><span data-count="4">4</span></dt><dd>власні бренди</dd></div>
-        <div><dt><span data-count="4">4</span></dt><dd>продуктові колаборації</dd></div>
-      </dl>
-    </div>
+    <dl class="stx-grid rv">
+      <div><dt><span data-count="1200">1 200</span></dt><dd>клієнтів</dd></div>
+      <div><dt>≈<span data-count="1000">1000</span></dt><dd>SKU у дистриб’юторському портфелі</dd></div>
+      <div><dt>≈<span data-count="30">30</span></dt><dd>партнерів</dd></div>
+      <div><dt><span data-count="60">60</span>+</dt><dd>працівників</dd></div>
+      <div><dt><span data-count="120">120</span> т</dt><dd>річні виробничі потужності</dd></div>
+      <div><dt><span data-count="2.3" data-dec="1">2,3</span> га</dt><dd>загальна площа виробничих потужностей</dd></div>
+      <div><dt><span data-count="4">4</span></dt><dd>власні бренди</dd></div>
+      <div><dt><span data-count="4">4</span></dt><dd>продуктові колаборації</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -340,11 +330,31 @@
       <h2 class="h2 rv">Власні бренди</h2>
       <a class="lnk rv" href="#">Усі бренди <svg><use href="#arr"/></svg></a>
     </div>
-    <div class="bgrid">
-      <a class="bc rv" href="#" style="--c:#1f5a2e"><span class="bc-top"><b>ProtectON</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Засоби захисту рослин</em>Власне виробництво лінійки засобів захисту рослин<span class="bc-f">з 2019 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
-      <a class="bc rv" href="#" style="--c:#232323;--d:.06s"><span class="bc-top"><b>Presence</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Промисловий сектор</em>Засоби захисту рослин Presence Technology для промислового сектору<span class="bc-f">з 2019 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
-      <a class="bc rv" href="#" style="--c:#267783;--d:.12s"><span class="bc-top"><b>UniSept</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Біодеструктори</em>Лінійка біодеструкторів UNISEPT<span class="bc-f">з 2023 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
-      <a class="bc rv" href="#" style="--c:#6F5746;--d:.18s"><span class="bc-top"><b>Argumin</b><svg class="bc-m"><use href="#bmark"/></svg></span><span class="bc-b"><em>Добрива</em>Органо-мінеральні добрива ARGUMIN та рідкі ARGUMIN FORMULA<span class="bc-f">з 2014 <i><svg><use href="#arr-up"/></svg></i></span></span></a>
+    <div class="bxgrid">
+      <a class="bx rv" href="#" style="--c:#1f5a2e">
+        <img src="../assets/img/field.jpg" alt="" loading="lazy" style="object-position:center 70%">
+        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-top"><em>Засоби захисту рослин</em><i>з 2019</i></span>
+        <span class="bx-c"><b>ProtectON</b><span class="bx-d">Власне виробництво лінійки засобів захисту рослин</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
+      </a>
+      <a class="bx rv" href="#" style="--c:#232323;--d:0.06s">
+        <img src="../assets/img/complex.jpg" alt="" loading="lazy" style="object-position:center">
+        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-top"><em>Промисловий сектор</em><i>з 2019</i></span>
+        <span class="bx-c"><b>Presence</b><span class="bx-d">Засоби захисту рослин Presence Technology для промислового сектору</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
+      </a>
+      <a class="bx rv" href="#" style="--c:#267783;--d:0.12s">
+        <img src="../assets/img/complex-2.jpg" alt="" loading="lazy" style="object-position:center">
+        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-top"><em>Біодеструктори</em><i>з 2023</i></span>
+        <span class="bx-c"><b>UniSept</b><span class="bx-d">Лінійка біодеструкторів UNISEPT</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
+      </a>
+      <a class="bx rv" href="#" style="--c:#6F5746;--d:0.18s">
+        <img src="../assets/img/field.jpg" alt="" loading="lazy" style="object-position:15% 20%">
+        <span class="bx-tint"></span><span class="bx-blur"></span>
+        <span class="bx-top"><em>Добрива</em><i>з 2014</i></span>
+        <span class="bx-c"><b>Argumin</b><span class="bx-d">Органо-мінеральні добрива ARGUMIN та рідкі ARGUMIN FORMULA</span><span class="bx-btn">Детальніше <svg><use href="#arr"/></svg></span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -502,6 +512,6 @@
   </div>
 </footer>
 
-<script src="v2.js?v=8" defer></script>
+<script src="v2.js?v=15" defer></script>
 </body>
 </html>
