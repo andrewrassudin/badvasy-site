@@ -941,3 +941,23 @@ a.mh:hover svg{transform:translateX(3px)}
 @media (max-width:720px){.bxgrid{grid-template-columns:1fr;gap:12px}.bx{height:380px}}
 .stx-in{padding-top:120px}
 @media (max-width:720px){.stx-in{padding-top:36px}}
+/* ---- compact footer: fits one screen ---- */
+.ftr2{padding:56px 0 24px}
+.f2-cta{padding-bottom:40px;align-items:center}
+.f2-cta h2{font-size:clamp(28px,2.9vw,44px);line-height:1.08;max-width:none}
+.f2-grid{padding:40px 0 32px;gap:56px}
+.f2-nav{gap:28px 32px}
+.f2-nav h4{margin-bottom:10px;font-size:15px}
+.f2-nav a{padding:3px 0;font-size:14px}
+.f2-contacts{gap:22px}
+.f2-l{margin-bottom:8px}
+.f2-c a{font-size:15.5px;padding:2px 0}
+.f2-c p{margin-top:4px;font-size:13.5px}
+.f2-soc a{height:38px}
+.f2-mark{padding:0 0 20px}
+.f2-mark svg{width:12vw;max-width:170px}
+.f2-mark span{font-size:clamp(56px,8vw,118px)}
+.f2-bot{padding-top:18px}
+@media (max-width:720px){.f2-cta h2 br{display:none}}
+.f2-mark{justify-content:center}
+.f2-mark span{font-size:clamp(56px,13.6vw,196px);line-height:.78}
