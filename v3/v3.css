@@ -425,3 +425,13 @@ svg{flex:none}
   .ft-nav{grid-template-columns:1fr 1fr}
   .cta .btn{flex:1}
 }
+
+/* vertical rhythm: every large gap is exactly 160px on desktop */
+@media (min-width:1101px){
+  :root{--sec:160px}
+  .ft{padding-top:160px}
+  .tl-vp{padding-bottom:0}
+}
+@media (min-width:1101px){.dirs+.brands{padding-top:155px}}
+.ab .more{opacity:1;transform:none}
+@media (min-width:1101px){.about+.partners{padding-top:161px}}
