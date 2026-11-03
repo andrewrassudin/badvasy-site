@@ -1070,3 +1070,17 @@ a.mh:hover svg{transform:translateX(3px)}
 .h2{letter-spacing:-.025em}
 /* revealed elements: no leftover reveal transition/delay */
 .rv-done{opacity:1;transform:none}
+
+/* ---- "БАДВАСИ — це": big heading, standalone equal cards, no plate-on-plate ---- */
+.abx{margin-top:72px;background:none;box-shadow:none!important;padding:0;border-radius:0}
+.abx-h{padding:0;margin-bottom:32px;font-size:clamp(28px,2.8vw,40px);font-weight:600;letter-spacing:-.025em;text-transform:none;color:var(--ink);display:block}
+.abx-h::before,.logos-t i,.stx-eb::before{display:none!important}
+.logos-t b::before{content:"· "}
+.abx-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.ab{height:100%;padding:28px;background:#fff;border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-1);overflow:hidden;
+  transition:box-shadow var(--t) var(--e),transform var(--t) var(--e)}
+.ab+.ab::before{display:none}
+.ab:hover{background:#fff;transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
+.ab::after{left:0;right:0;border-radius:0}
+@media (max-width:1100px){.abx-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.abx{margin-top:48px}.abx-row{grid-template-columns:1fr;gap:12px}.ab{padding:22px}}
