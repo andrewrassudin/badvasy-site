@@ -593,3 +593,11 @@ svg{flex:none}
   .tl.tl-measure p{grid-template-rows:1fr;transition:none}
 }
 @media (hover:none){.tl li{cursor:pointer}}
+
+/* footer: links sit closer to the wordmark — shorter footer */
+.ft-grid{padding-bottom:0}
+.ft-mark{margin-top:32px}
+
+/* hero: frames live in their own layer, so the text card is always above them */
+.st-media{position:absolute;inset:0;z-index:0;isolation:isolate}
+.st-card{z-index:3}
