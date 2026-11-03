@@ -69,22 +69,25 @@
   /* hero stage: three stories with tabs and a soft autoplay */
   const st = $('[data-stage]');
   if (st) {
-    const tabs = $$('.st-tabs button', st), imgs = $$('.st-media img', st), txt = $$('.st-txt>div', st);
-    let i = 0, timer; const DUR = 7000;
-    st.style.setProperty('--dur', DUR + 'ms');
+    const imgs = $$('.st-media img', st), txt = $$('.st-txt>div', st);
+    const num = $('.st-n b', st), bar = $('.st-bar i', st), N = imgs.length;
+    let i = 0, z = 1;
+    st.style.setProperty('--dur', '7000ms');
     const go = k => {
-      i = (k + tabs.length) % tabs.length;
-      tabs.forEach((t, n) => { t.classList.toggle('is-on', n === i); t.classList.remove('run'); t.setAttribute('aria-selected', String(n === i)); });
+      const prev = i; i = (k + N) % N;
+      if (prev !== i) {
+        // the new frame wipes in from the right on top of the previous one
+        imgs.forEach(m => m.classList.toggle('is-prev', m === imgs[prev]));
+        imgs[i].style.zIndex = ++z;
+      }
       imgs.forEach((m, n) => m.classList.toggle('is-on', n === i));
       txt.forEach((m, n) => m.classList.toggle('is-on', n === i));
-      void tabs[i].offsetWidth; if (!reduce) tabs[i].classList.add('run');
-      clearTimeout(timer); if (!reduce) timer = setTimeout(tick, DUR);
+      num.textContent = String(i + 1).padStart(2, '0');
+      bar.classList.toggle('run', false); void bar.offsetWidth; if (!reduce) bar.classList.add('run');
     };
-    let paused = false, left = DUR, started = 0;
-    const tick = () => { if (!paused) go(i + 1); };
-    tabs.forEach((t, n) => t.addEventListener('click', () => go(n)));
-    st.addEventListener('mouseenter', () => { paused = true; clearTimeout(timer); });
-    st.addEventListener('mouseleave', () => { paused = false; clearTimeout(timer); if (!reduce) timer = setTimeout(tick, 2500); });
+    bar.addEventListener('animationend', () => go(i + 1));   // the loading line drives the autoplay
+    $$('.st-b', st).forEach(b => b.addEventListener('click', () => go(i + +b.dataset.dir)));
+    imgs[0].style.zIndex = 1;
     go(0);
   }
 
@@ -128,5 +131,29 @@
       const par = () => { raf = 0; const left = document.documentElement.scrollHeight - (scrollY + innerHeight); t.style.setProperty('--py', Math.min(60, Math.max(0, left * .25)).toFixed(1) + 'px'); };
       addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(par); }, { passive: true }); par();
     }
+  }
+})();
+
+/* arrow swap, history row height, numbers zoom */
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // every «→» inside a link/button gets a clipped box with a twin arrow
+  document.querySelectorAll('a svg, button svg').forEach(svg => {
+    const u = svg.querySelector('use'); if (!u || u.getAttribute('href') !== '#arr' || svg.closest('.ax,.st-b,.ar')) return;
+    const box = document.createElement('span'); box.className = 'ax';
+    svg.replaceWith(box); box.append(svg, svg.cloneNode(true)); box.lastChild.setAttribute('aria-hidden', 'true');
+  });
+  // history: reserve the height of the tallest opened card
+  const tl = document.querySelector('.tl');
+  if (tl) {
+    const fit = () => { tl.style.setProperty('--tl-h', 'auto'); tl.classList.add('tl-measure'); const h = tl.offsetHeight; tl.classList.toggle('tl-measure', false); tl.style.setProperty('--tl-h', h + 'px'); };
+    fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+  }
+  // numbers photo: subtle scroll-linked zoom 1.12 → 1.0
+  const box = document.querySelector('.nums-box');
+  if (box && !reduce) {
+    let raf = 0;
+    const upd = () => { raf = 0; const r = box.getBoundingClientRect(), vh = innerHeight; const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height))); box.style.setProperty('--nz', (1.12 - .12 * p).toFixed(4)); };
+    addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(upd); }, { passive: true }); upd();
   }
 })();

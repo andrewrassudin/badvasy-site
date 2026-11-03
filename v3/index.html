@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="preload" href="../assets/fonts/fixel-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/fixel-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="v3.css?v=11">
+<link rel="stylesheet" href="v3.css?v=13">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -94,7 +94,7 @@
     </nav>
     <div class="hd-act">
       <button class="ib" aria-label="Пошук"><svg><use href="#search"/></svg></button>
-      <div class="lang" role="group" aria-label="Мова"><button class="is-on" aria-pressed="true">UA</button><button aria-pressed="false" title="Англійська версія — незабаром">EN</button></div>
+      <div class="hd-lang"><button class="ib lang-g" aria-label="Мова: українська (EN — незабаром)" title="UA · EN незабаром"><svg viewBox="1329 138 24 24"><path fill="currentColor" d="M1341 140C1346.52 140 1351 144.477 1351 150C1351 155.523 1346.52 160 1341 160C1335.48 160 1331 155.523 1331 150C1331 144.477 1335.48 140 1341 140ZM1338.830 154.218C1339.390 156.462 1340.300 157.772 1341 157.772C1341.700 157.772 1342.610 156.462 1343.170 154.218H1338.830ZM1334.350 154.218C1335.250 155.552 1336.540 156.598 1338.050 157.201C1337.610 156.354 1337.270 155.333 1337.020 154.218H1334.350ZM1344.980 154.218C1344.730 155.333 1344.390 156.354 1343.950 157.201C1345.470 156.598 1346.750 155.552 1347.650 154.218H1344.980ZM1333.470 147.106C1333.170 147.942 1333 148.837 1333 149.772C1333 150.709 1333.170 151.604 1333.470 152.439H1336.720C1336.610 151.564 1336.560 150.663 1336.560 149.772C1336.560 148.882 1336.610 147.982 1336.720 147.106H1333.470ZM1338.500 147.106C1338.400 147.921 1338.330 148.811 1338.330 149.772C1338.330 150.734 1338.400 151.625 1338.500 152.439H1343.500C1343.600 151.625 1343.670 150.734 1343.670 149.772C1343.670 148.811 1343.600 147.921 1343.500 147.106H1338.500ZM1345.280 147.106C1345.390 147.982 1345.440 148.882 1345.440 149.772C1345.440 150.663 1345.390 151.564 1345.280 152.439H1348.530C1348.830 151.604 1349 150.709 1349 149.772C1349 148.836 1348.830 147.942 1348.530 147.106H1345.280ZM1338.050 142.345C1336.540 142.948 1335.250 143.994 1334.350 145.328H1337.020C1337.270 144.213 1337.610 143.191 1338.050 142.345ZM1341 141.772C1340.300 141.773 1339.390 143.084 1338.830 145.328H1343.170C1342.610 143.084 1341.700 141.772 1341 141.772ZM1343.950 142.345C1344.390 143.191 1344.730 144.213 1344.980 145.328H1347.650C1346.750 143.994 1345.470 142.948 1343.950 142.345Z"/></svg></button></div>
       <a class="btn btn-p hd-portal" href="#"><svg><use href="#user"/></svg>Увійти в портал</a>
       <a class="ib ib-portal" href="#" aria-label="Увійти в портал"><svg><use href="#user"/></svg></a>
       <button class="ib burger" aria-label="Відкрити меню" aria-expanded="false"><span></span><span></span></button>
@@ -134,16 +134,8 @@
         <img src="../assets/img/complex.jpg" alt="Виробничо-складський комплекс «Родниківка»" loading="lazy">
         <img src="../assets/img/complex-2.jpg" alt="Виробничо-складський комплекс" loading="lazy">
       </div>
-      <div class="st-chips">
-        <span class="chip-w"><b>≈ 1000 SKU</b>у портфелі</span>
-        <span class="chip-w"><b>1 200</b>клієнтів</span>
-      </div>
       <div class="st-card">
-        <div class="st-tabs" role="tablist">
-          <button class="is-on" role="tab" aria-selected="true">Компанія<i></i></button>
-          <button role="tab" aria-selected="false">BASF · 2025<i></i></button>
-          <button role="tab" aria-selected="false">Портал<i></i></button>
-        </div>
+        <div class="st-ctrl"><span class="st-n"><b>01</b> / 03</span><span class="st-bar"><i></i></span><span class="st-btns"><button class="st-b" data-dir="-1" aria-label="Попередній"><svg style="transform:rotate(180deg)"><use href="#arr"/></svg></button><button class="st-b" data-dir="1" aria-label="Наступний"><svg><use href="#arr"/></svg></button></span></div>
         <div class="st-txt">
           <div class="is-on"><b>Разом ми створюємо те, що необхідно кожному</b><p>Національна компанія дистриб’ютор та виробник засобів захисту рослин та добрив.</p><a class="lnk" href="#">Про компанію <svg><use href="#arr"/></svg></a></div>
           <div><b>Ексклюзивні права на фасування продукції BASF</b><p>Отримано ексклюзивні права на фасування продукції BASF для приватного сектору — ще один крок до зміцнення позицій БАДВАСИ як провідного дистриб’ютора засобів захисту рослин в Україні.</p><a class="lnk" href="#">Детальніше <svg><use href="#arr"/></svg></a></div>
@@ -305,15 +297,15 @@
   </div>
   <div class="tl-vp" data-r>
     <ol class="tl">
-      <li><span class="yr">2006</span><span class="st">Етап 1 · Початок шляху</span><b>19 грудня 2006 року — засновано компанію БАДВАСИ</b><p>2007 — відкрито перший офіс і розпочато активні продажі.</p></li>
-      <li><span class="yr">2008</span><span class="st">Етап 1 · Початок шляху</span><b>Підписано контракти з компаніями SYNGENTA та BAYER</b><p>Компанія увійшла до числа лідерів у сфері торгівлі засобами захисту рослин у дрібному пакуванні.</p></li>
-      <li><span class="yr">2010</span><span class="st">Етап 1 · Початок шляху</span><b>Офіційні представництва у Києві, Тернополі та Донецьку</b><p>Розпочато постачання продукції до мережі гіпермаркетів Епіцентр. Створено офіційний сайт badvasy.com.ua.</p></li>
-      <li class="hi"><span class="yr">2014</span><span class="st">Етап 2 · Зростання та визнання</span><b>Створено та запущено бренд добрив ARGUMIN</b><p>Постачання продукції в мережу Леруа Мерлен. Розширено продажі через маркетплейс ROZETKA.</p></li>
-      <li><span class="yr">2017</span><span class="st">Етап 2 · Зростання та визнання</span><b>Створено відділ по роботі з клієнтами</b><p>Інтеграція з компанією Нова пошта для вдосконалення процесу логістики.</p></li>
-      <li class="hi"><span class="yr">2019</span><span class="st">Етап 3 · Нові можливості</span><b>Придбано компанію Presence Technology</b><p>Запущено власне виробництво лінійки засобів захисту рослин ProtectON.</p></li>
-      <li><span class="yr">2021</span><span class="st">Етап 3 · Нові можливості</span><b>Запуск лінійки органо-мінеральних добрив ARGUMIN</b><p>Початок пакування продукції брендів ADAMA, NUFARM, BAYER для приватного сектору.</p></li>
-      <li><span class="yr">2023</span><span class="st">Етап 3 · Нові можливості</span><b>Колаборація з FMC і запуск Корагену у дрібному фасуванні</b><p>Ексклюзивна дистрибуція Protect Garden (SBM) та YARA. Лінійки ARGUMIN FORMULA та UNISEPT.</p></li>
-      <li class="hi y"><span class="yr">2025</span><span class="st">Сьогодні</span><b>Масштабний ребрендинг компанії</b><p>Ексклюзивні права на фасування продукції BASF для приватного сектору. Впроваджено BI-системи.</p></li>
+      <li><span class="yr">2006</span><span class="st">Етап 1 · Початок шляху</span><b>19 грудня 2006 року — засновано компанію БАДВАСИ</b><p><span>2007 — відкрито перший офіс і розпочато активні продажі.</span></p></li>
+      <li><span class="yr">2008</span><span class="st">Етап 1 · Початок шляху</span><b>Підписано контракти з компаніями SYNGENTA та BAYER</b><p><span>Компанія увійшла до числа лідерів у сфері торгівлі засобами захисту рослин у дрібному пакуванні.</span></p></li>
+      <li><span class="yr">2010</span><span class="st">Етап 1 · Початок шляху</span><b>Офіційні представництва у Києві, Тернополі та Донецьку</b><p><span>Розпочато постачання продукції до мережі гіпермаркетів Епіцентр. Створено офіційний сайт badvasy.com.ua.</span></p></li>
+      <li class="hi"><span class="yr">2014</span><span class="st">Етап 2 · Зростання та визнання</span><b>Створено та запущено бренд добрив ARGUMIN</b><p><span>Постачання продукції в мережу Леруа Мерлен. Розширено продажі через маркетплейс ROZETKA.</span></p></li>
+      <li><span class="yr">2017</span><span class="st">Етап 2 · Зростання та визнання</span><b>Створено відділ по роботі з клієнтами</b><p><span>Інтеграція з компанією Нова пошта для вдосконалення процесу логістики.</span></p></li>
+      <li class="hi"><span class="yr">2019</span><span class="st">Етап 3 · Нові можливості</span><b>Придбано компанію Presence Technology</b><p><span>Запущено власне виробництво лінійки засобів захисту рослин ProtectON.</span></p></li>
+      <li><span class="yr">2021</span><span class="st">Етап 3 · Нові можливості</span><b>Запуск лінійки органо-мінеральних добрив ARGUMIN</b><p><span>Початок пакування продукції брендів ADAMA, NUFARM, BAYER для приватного сектору.</span></p></li>
+      <li><span class="yr">2023</span><span class="st">Етап 3 · Нові можливості</span><b>Колаборація з FMC і запуск Корагену у дрібному фасуванні</b><p><span>Ексклюзивна дистрибуція Protect Garden (SBM) та YARA. Лінійки ARGUMIN FORMULA та UNISEPT.</span></p></li>
+      <li class="hi y"><span class="yr">2025</span><span class="st">Сьогодні</span><b>Масштабний ребрендинг компанії</b><p><span>Ексклюзивні права на фасування продукції BASF для приватного сектору. Впроваджено BI-системи.</span></p></li>
     </ol>
   </div>
 </section>
@@ -399,6 +391,6 @@
   </div>
 </footer>
 
-<script src="v3.js?v=4" defer></script>
+<script src="v3.js?v=5" defer></script>
 </body>
 </html>

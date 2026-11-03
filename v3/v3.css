@@ -514,3 +514,56 @@ svg{flex:none}
   .bx-c{bottom:21px}
   .bx-d,.bx.is-on .bx-d{height:46px;width:400px;margin-top:14px;display:flex;align-items:center}
 }
+
+/* ---------- hero stage: counter 01 / 03, loading line, wipe transition ---------- */
+.st-media img,.stage.in .st-media img{opacity:1;transform:scale(1.08);clip-path:inset(0 0 0 100%);transition:clip-path 1.2s var(--ease),transform 2.4s var(--ease)}
+.st-media img.is-on,.stage.in .st-media img.is-on{clip-path:inset(0);transform:scale(1)}
+.st-media img.is-prev,.stage.in .st-media img.is-prev{clip-path:inset(0);transform:scale(1);transition:none}
+.st-ctrl{display:flex;align-items:center;gap:20px;padding:4px 4px 4px 16px}
+.st-n{font-size:14px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.st-n b{color:var(--sea);font-weight:600}
+.st-bar{position:relative;flex:1;height:2px;border-radius:2px;background:var(--surface-2);overflow:hidden}
+.st-bar i{position:absolute;inset:0;background:var(--sea);transform:scaleX(0);transform-origin:left}
+.st-bar i.run{animation:prog var(--dur,7000ms) linear forwards}
+.stage:hover .st-bar i.run{animation-play-state:paused}
+.st-btns{display:flex;gap:6px}
+.st-b{width:36px;height:36px;border-radius:50%;background:var(--surface);color:var(--sea);display:grid;place-items:center;transition:background-color var(--t) var(--ease-s),color var(--t) var(--ease-s)}
+.st-b svg{width:14px;height:14px}
+.st-b:hover{background:var(--sea);color:#fff}
+.st-card{padding:12px 12px 24px}
+.st-txt{padding-top:16px}
+@media (max-width:720px){.st-b{background:#fff}}
+
+/* ---------- arrow swap on hover: old arrow leaves right, new one slides in from the left ---------- */
+.ax{position:relative;display:inline-block;width:16px;height:16px;overflow:hidden;flex:none;vertical-align:middle}
+.ax svg{position:absolute;inset:0;width:100%!important;height:100%!important;transform:none;transition:transform .3s cubic-bezier(.28,.11,.32,1),opacity .3s cubic-bezier(.28,.11,.32,1)!important}
+.ax svg+svg{transform:translateX(-160%)!important;opacity:0;transition-delay:.05s!important}
+@media (hover:hover){
+  a:hover .ax svg:first-child,button:hover .ax svg:first-child{transform:translateX(160%)!important;opacity:0}
+  a:hover .ax svg+svg,button:hover .ax svg+svg{transform:none!important;opacity:1}
+}
+.arr-c .ax{width:16px;height:16px}
+
+/* globe language button */
+.hd-lang{position:relative;padding-right:14px;margin-right:6px}
+.hd-lang::after{content:"";position:absolute;right:0;top:50%;width:1px;height:24px;margin-top:-12px;background:var(--line)}
+.lang-g svg{width:22px;height:22px}
+@media (max-width:1100px){.hd-lang{display:none}}
+
+/* «Робота з нами»: the photo never moves when the accordion opens */
+.why-in{align-items:start}
+.why-r .why-ph{position:relative;top:0}
+
+/* numbers: the photo zooms gently with scroll (pattern stays still) */
+.nums-bg{transform:scale(var(--nz,1.12));will-change:transform}
+
+/* history: subtitle opens downward on hover; the row height is reserved so nothing below moves */
+@media (hover:hover) and (min-width:721px){
+  .tl{align-items:flex-start;height:var(--tl-h,auto)}
+  .tl p{display:grid;grid-template-rows:0fr;margin-top:0;opacity:0;transition:grid-template-rows .5s var(--ease),opacity .3s var(--ease-s),margin .5s var(--ease)}
+  .tl p>span{overflow:hidden;min-height:0}
+  .tl li:hover p,.tl li:focus-within p{grid-template-rows:1fr;opacity:1;margin-top:12px;transition:grid-template-rows .5s var(--ease),opacity .4s var(--ease-s) .1s,margin .5s var(--ease)}
+  .tl.tl-measure p{grid-template-rows:1fr;margin-top:12px;transition:none}
+}
+@media (hover:hover) and (min-width:721px){.tl li{min-height:218px}}
+@media (hover:hover) and (min-width:721px){.tl p,.tl li:hover p,.tl li:focus-within p{margin-top:12px}}

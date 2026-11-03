@@ -30,7 +30,7 @@ const SEL = 'a, button, .bx, .dc, .ab, .tl li, .acc-i, .pt-grid li, .qr, .qrc, .
     }, SEL);
     const snap = i => p.evaluate(i => {
       const e = document.querySelector(`[data-qa="${i}"]`);
-      const parts = [e, ...e.querySelectorAll('*')].filter(x => x.tagName !== 'IMG' && !x.closest('svg>*') && x.getClientRects().length)
+      const parts = [e, ...e.querySelectorAll('*')].filter(x => x.tagName !== 'IMG' && !x.closest('svg>*') && !x.closest('.ax svg') && x.getClientRects().length)
         .map(x => { const r = x.getBoundingClientRect(); return [r.left, r.top, r.width, r.height].map(n => Math.round(n * 2) / 2); });
       const secs = [...document.querySelectorAll('main>section,footer')].map(x => Math.round(x.getBoundingClientRect().top + scrollY));
       return { parts, secs };
