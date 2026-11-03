@@ -9,7 +9,7 @@
 - `/assets/fonts/fixel-{500,600,800}.woff2` — шрифт Fixel Display (спільний).
 - `/assets/img/` — тимчасові фото з брендбука (поле, комплекс «Родниківка», команда). Фото брендів/продукції клієнт ще не дав.
 - `/v2/qr-*.svg` — QR-коди (портал — заглушка `badvasy.com.ua/portal`, Instagram, Facebook).
-- Хостинг: GitHub Pages з `main` / root → https://andygriffin1983.github.io/badvasy-site/v2/
+- Хостинг: GitHub Pages з `main` / root → https://andrewrassudin.github.io/badvasy-site/v2/
 - Статика без збірки. Локально: `python3 -m http.server 8123` у корені → http://localhost:8123/v2/
 - Після змін CSS/JS піднімати `?v=N` у `<link>`/`<script>` в `v2/index.html` (кеш Pages).
 
@@ -42,4 +42,4 @@
 4. Підняти `?v=N` у змінених `<link>`/`<script>`.
 
 ## Git
-Комітити й пушити в `main` (`git push origin main`). Автор: andygriffin1983.
+Комітити й пушити в `main` (`git push origin main`). Автор: andrewrassudin.

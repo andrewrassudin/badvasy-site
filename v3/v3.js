@@ -124,7 +124,7 @@
   if (fm) {
     const t = $('span', fm);
     const fit = () => { t.style.setProperty('--fs', '100px'); t.style.setProperty('--fs', (100 * fm.clientWidth / t.getBoundingClientRect().width * .99).toFixed(2) + 'px'); };
-    fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+    fit(); let __w = innerWidth; addEventListener('resize', () => { if (innerWidth !== __w) { __w = innerWidth; fit(); } }); document.fonts && document.fonts.ready.then(fit);
     new IntersectionObserver(([e], o) => { if (e.isIntersecting) { fm.classList.add('in'); o.disconnect(); } }, { threshold: .25 }).observe(fm);
     if (!reduce) {
       let raf = 0;
@@ -147,7 +147,7 @@
   const tl = document.querySelector('.tl');
   if (tl) {
     const fit = () => { tl.style.setProperty('--tl-h', 'auto'); tl.classList.add('tl-measure'); const h = tl.offsetHeight; tl.classList.toggle('tl-measure', false); tl.style.setProperty('--tl-h', h + 'px'); };
-    fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+    fit(); let __w = innerWidth; addEventListener('resize', () => { if (innerWidth !== __w) { __w = innerWidth; fit(); } }); document.fonts && document.fonts.ready.then(fit);
   }
   // numbers photo: subtle scroll-linked zoom 1.12 → 1.0
   const box = document.querySelector('.nums-box');
@@ -156,4 +156,15 @@
     const upd = () => { raf = 0; const r = box.getBoundingClientRect(), vh = innerHeight; const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height))); box.style.setProperty('--nz', (1.12 - .12 * p).toFixed(4)); };
     addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(upd); }, { passive: true }); upd();
   }
+})();
+
+/* links with href="#" never jump to the top; history cards open on tap on touch screens */
+(() => {
+  document.addEventListener('click', e => { const a = e.target.closest('a[href="#"]'); if (a) e.preventDefault(); });
+  const items = [...document.querySelectorAll('.tl li')];
+  items.forEach(li => li.addEventListener('click', () => {
+    if (matchMedia('(hover: hover)').matches) return;
+    const on = !li.classList.contains('is-open');
+    items.forEach(x => x.classList.toggle('is-open', x === li && on));
+  }));
 })();

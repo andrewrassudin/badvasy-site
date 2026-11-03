@@ -567,3 +567,29 @@ svg{flex:none}
 }
 @media (hover:hover) and (min-width:721px){.tl li{min-height:218px}}
 @media (hover:hover) and (min-width:721px){.tl p,.tl li:hover p,.tl li:focus-within p{margin-top:12px}}
+
+/* ---------- hero card: the link is anchored to the bottom-left corner ---------- */
+.st-card{display:flex;flex-direction:column;min-height:300px}
+.st-txt{flex:1}
+.st-txt>div{display:flex;flex-direction:column;align-items:flex-start}
+.st-txt>div .lnk{margin-top:auto}
+.st-txt p{margin-bottom:20px}
+@media (max-width:720px){.st-card{min-height:0}}
+
+/* ---------- history: one dot style — hollow by default, filled on hover / open; centred on the line ---------- */
+.tl::before{top:14px;height:2px}
+.tl li::before,.tl li.hi::before,.tl li.y::before{top:-35px;width:12px;height:12px;background:#fff;box-shadow:inset 0 0 0 2px var(--sky);transform:none;transition:background-color .3s var(--ease-s),box-shadow .3s var(--ease-s)}
+.tl li:hover::before,.tl li.is-open::before{background:var(--sea);box-shadow:inset 0 0 0 2px var(--sea)}
+.tl li.hi .yr,.tl li.y .yr{color:var(--sky)}
+.tl li:hover .yr,.tl li.is-open .yr{color:var(--sea)}
+
+/* history cards open downward on every screen: hover on desktop, tap on touch */
+@media (min-width:721px){
+  .tl{align-items:flex-start;height:var(--tl-h,auto)}
+  .tl li{min-height:218px}
+  .tl p{display:grid;grid-template-rows:0fr;margin-top:12px;opacity:0;transition:grid-template-rows .5s var(--ease),opacity .3s var(--ease-s)}
+  .tl p>span{overflow:hidden;min-height:0}
+  .tl li:hover p,.tl li:focus-within p,.tl li.is-open p{grid-template-rows:1fr;opacity:1;transition:grid-template-rows .5s var(--ease),opacity .4s var(--ease-s) .1s}
+  .tl.tl-measure p{grid-template-rows:1fr;transition:none}
+}
+@media (hover:none){.tl li{cursor:pointer}}
