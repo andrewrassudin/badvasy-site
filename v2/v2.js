@@ -101,7 +101,9 @@
     const tb = $$('[data-tl]');
     const upd = () => { tb[0].disabled = vp.scrollLeft < 4; tb[1].disabled = vp.scrollLeft + vp.clientWidth >= vp.scrollWidth - 4; };
     tb.forEach(b => b.addEventListener('click', () => vp.scrollBy({ left: step() * +b.dataset.tl, behavior: reduce ? 'auto' : 'smooth' })));
-    vp.addEventListener('scroll', upd, { passive: true }); upd();
+    const tlEl = $('.tl', vp);
+    const prog = () => tlEl.style.setProperty('--tp', Math.min(1, (vp.scrollLeft + vp.clientWidth) / vp.scrollWidth).toFixed(3));
+    vp.addEventListener('scroll', () => { upd(); prog(); }, { passive: true }); upd(); prog();
     let down = false, sx = 0, sl = 0, moved = false;
     vp.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = vp.scrollLeft; });
     addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 4) { moved = true; vp.classList.add('drag'); } vp.scrollLeft = sl - dx; });
