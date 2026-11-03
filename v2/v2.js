@@ -3,37 +3,6 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- soft smooth scroll (wheel lerp, desktop only) ---------- */
-  if (!reduce && matchMedia('(pointer: fine)').matches) {
-    const root = document.documentElement;
-    root.classList.add('lenis');
-    let target = scrollY, cur = scrollY, raf = 0;
-    const max = () => root.scrollHeight - innerHeight;
-    const step = () => {
-      cur += (target - cur) * 0.11;
-      if (Math.abs(target - cur) < 0.4) cur = target;
-      scrollTo(0, cur);
-      raf = cur !== target ? requestAnimationFrame(step) : 0;
-    };
-    addEventListener('wheel', e => {
-      if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-      if (e.target.closest('.mob .wrap, .mega-box')) return;
-      e.preventDefault();
-      const dy = e.deltaMode === 1 ? e.deltaY * 18 : e.deltaY;
-      if (!raf) { target = cur = scrollY; }
-      target = Math.max(0, Math.min(target + dy, max()));
-      if (!raf) raf = requestAnimationFrame(step);
-    }, { passive: false });
-    addEventListener('scroll', () => { if (!raf) target = cur = scrollY; }, { passive: true });
-    // anchor links glide too
-    $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-      const id = a.getAttribute('href'); if (id.length < 2) return;
-      const el = $(id); if (!el) return;
-      e.preventDefault(); target = Math.min(max(), el.getBoundingClientRect().top + scrollY - 90);
-      if (!raf) { cur = scrollY; raf = requestAnimationFrame(step); }
-    }));
-  }
-
   /* ---------- header: stuck state ---------- */
   const hdr = $('#hdr'), bar = $('.bar');
   const onScroll = () => hdr.classList.toggle('is-stuck', bar.getBoundingClientRect().top <= 12.5 && scrollY > 40);
@@ -72,19 +41,6 @@
     burger.setAttribute('aria-expanded', String(o)); mob.hidden = !o;
   });
 
-  /* ---------- audience switch (changes hero copy) ---------- */
-  const aud = [
-    'Дистриб’ютор та виробник засобів захисту рослин і добрив для агромагазинів по всій Україні: ≈ 1000 SKU, швидка доставка та портал для замовлень.',
-    'Офіційна дистрибуція, власні виробничі потужності та контрактне фасування — виводимо ваш продукт на полиці 1 200 агромагазинів.',
-    'Стабільні поставки від ≈ 30 виробників, власний склад 2,3 га та прогнозована логістика для ваших партнерів.'
-  ];
-  const leadEl = $('.slide p');
-  $$('.aud-b').forEach(b => b.addEventListener('click', () => {
-    $$('.aud-b').forEach(x => { x.classList.toggle('is-on', x === b); x.setAttribute('aria-selected', String(x === b)); });
-    go(0);
-    leadEl.style.opacity = 0;
-    setTimeout(() => { leadEl.textContent = aud[+b.dataset.aud]; leadEl.style.opacity = ''; }, 200);
-  }));
   $$('.lang button').forEach(b => b.addEventListener('click', () => $$('.lang button').forEach(x => { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', String(x === b)); })));
 
   /* ---------- hero slider ---------- */
@@ -130,7 +86,7 @@
 
   /* ---------- why: hover highlight + gentle auto-cycle ---------- */
   const wfs = $$('.wf');
-  let wi = 3, wt = 0, hovering = false;
+  let wi = 2, wt = 0, hovering = false;
   const setW = k => wfs.forEach(w => w.classList.toggle('is-on', +w.dataset.k === k));
   wfs.forEach(w => {
     w.addEventListener('mouseenter', () => { hovering = true; setW(+w.dataset.k); wi = +w.dataset.k; });
