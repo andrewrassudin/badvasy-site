@@ -1433,3 +1433,11 @@ b,strong{font-weight:600}
 
 /* numbers photo: thin topographic contour lines (brandbook relief motif), barely visible, at an angle */
 .stx::after{content:"";position:absolute;inset:-25%;z-index:-1;pointer-events:none;background:url(../assets/img/topo.svg) center/cover no-repeat;opacity:.13;transform:rotate(-9deg)}
+
+/* brands: arrow back at the bottom-right; two-line description centred on it; tags keep the full top row */
+@media (min-width:1101px) and (hover:hover){
+  .bx-arr{top:auto;bottom:22px;right:20px}
+  .bx-top{right:20px}
+  .bx-c{bottom:20px}
+  .bxgrid>.bx .bx-d,.bxgrid>.bx.is-on .bx-d,.bxgrid>.bx:not(.is-on) .bx-d{height:44px;display:flex;align-items:center;margin-top:12px!important}
+}
