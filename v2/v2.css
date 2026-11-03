@@ -753,3 +753,13 @@ a.mh:hover svg{transform:translateX(3px)}
 @media (max-width:720px){.pt-grid{grid-template-columns:1fr}.pcap{width:90%}.pcap li{font-size:13px;padding:10px 12px}}
 .qc .qa{color:var(--sea)}
 .qc.qc-lemon .qa{color:var(--lemon)}
+/* feature cards above decorative rings */
+.why-col{position:relative;z-index:2}
+.why-vis{z-index:1}
+.ring{z-index:0;pointer-events:none}
+.wf i{position:relative;z-index:1}
+/* soft arrow-button hovers: no rotation */
+.bc:hover .bc-f i,.qc:hover .qa{transform:none}
+.bc-f i svg,.qa svg{transition:transform var(--t) var(--e)}
+.bc:hover .bc-f i svg,.qc:hover .qa svg{transform:translate(2px,-2px)}
+.wf.is-on span,.wf:hover span{max-height:110px}
