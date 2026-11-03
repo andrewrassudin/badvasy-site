@@ -1033,12 +1033,12 @@ a.mh:hover svg{transform:translateX(3px)}
   --canvas:#F2F5F5;
   --sh-1:0 0 0 1px rgba(13,60,70,.04),0 1px 2px rgba(13,60,70,.04),0 10px 24px -14px rgba(13,60,70,.16);
   --sh-2:0 0 0 1px rgba(13,60,70,.05),0 2px 4px rgba(13,60,70,.04),0 22px 44px -24px rgba(13,60,70,.28);
-  --sh-chip:0 1px 0 rgba(255,255,255,.9) inset,0 1px 2px rgba(13,60,70,.06),0 6px 14px -8px rgba(13,60,70,.22);
+  --sh-chip:0 1px 2px rgba(13,60,70,.06),0 6px 14px -8px rgba(13,60,70,.22);
 }
 /* white surfaces get a hairline top highlight = the "double" look */
-.slider,.abx,.dc,.portal,.cform,.cinfo,.qrc,.tl li,.nw-big,.st2,.bar>.bar-in{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-1)}
-.dc:hover,.tl li:hover,.qrc:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
-.hdr.is-stuck .bar>.bar-in{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
+.slider,.abx,.dc,.portal,.cform,.cinfo,.qrc,.tl li,.nw-big,.st2,.bar>.bar-in{box-shadow:var(--sh-1)}
+.dc:hover,.tl li:hover,.qrc:hover{box-shadow:var(--sh-2)}
+.hdr.is-stuck .bar>.bar-in{box-shadow:var(--sh-2)}
 .hero .slider{box-shadow:none}
 
 /* icon chips: white circles with soft lift, as in the reference */
@@ -1055,11 +1055,11 @@ a.mh:hover svg{transform:translateX(3px)}
 .fl input:focus{box-shadow:inset 0 0 0 1.5px var(--sky),0 0 0 4px rgba(38,119,131,.1)}
 
 /* softer floating chips on photos */
-.float,.st-tag,.bx-top em{box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 24px -12px rgba(13,60,70,.35)}
+.float,.st-tag,.bx-top em{box-shadow:0 10px 24px -12px rgba(13,60,70,.35)}
 
 /* buttons: subtle depth */
-.btn-y{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 1px 2px rgba(110,100,0,.18)}
-.btn-y:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 10px 22px -12px rgba(150,140,0,.65)}
+.btn-y{box-shadow:0 1px 2px rgba(110,100,0,.18)}
+.btn-y:hover{box-shadow:0 10px 22px -12px rgba(150,140,0,.65)}
 .btn-ghost{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
 .btn-ghost:hover{background:var(--canvas)}
 .sc-b{background:#fff;box-shadow:var(--sh-chip)}
@@ -1077,10 +1077,10 @@ a.mh:hover svg{transform:translateX(3px)}
 .abx-h::before,.logos-t i,.stx-eb::before{display:none!important}
 .logos-t b::before{content:"· "}
 .abx-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
-.ab{height:100%;padding:28px;background:#fff;border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-1);overflow:hidden;
+.ab{height:100%;padding:28px;background:#fff;border-radius:12px;box-shadow:var(--sh-1);overflow:hidden;
   transition:box-shadow var(--t) var(--e),transform var(--t) var(--e)}
 .ab+.ab::before{display:none}
-.ab:hover{background:#fff;transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
+.ab:hover{background:#fff;transform:translateY(-3px);box-shadow:var(--sh-2)}
 .ab::after{left:0;right:0;border-radius:0}
 @media (max-width:1100px){.abx-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.abx{margin-top:48px}.abx-row{grid-template-columns:1fr;gap:12px}.ab{padding:22px}}
@@ -1126,8 +1126,8 @@ b,strong{font-weight:600}
 .portal{background:none;box-shadow:none;padding:0;gap:16px;overflow:visible;align-items:center}
 .pt-copy{padding:0 40px 0 0}
 .pt-grid{gap:16px}
-.pt-grid li{background:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-1);padding:24px}
-.pt-grid li:hover{background:#fff;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),var(--sh-2)}
+.pt-grid li{background:#fff;box-shadow:var(--sh-1);padding:24px}
+.pt-grid li:hover{background:#fff;transform:translateY(-2px);box-shadow:var(--sh-2)}
 .pt-grid li.y,.pt-grid li.y:hover{background:var(--lemon)}
 @media (max-width:1100px){.pt-copy{padding:0 0 8px}}
 
@@ -1242,3 +1242,7 @@ b,strong{font-weight:600}
 /* sections over the sticky numbers are opaque: keep room inside each for card shadows */
 .dirs,.dirs~.sec:not(.contact){padding-bottom:24px}
 .dirs~.sec{padding-top:calc(var(--sec) - 24px)}
+
+/* flat buttons: no highlights, no glow — colour change only */
+.btn-y,.btn-y:hover,.bx-btn,.util-portal,.util-portal:hover{box-shadow:none}
+.sc-b,.tl-nav .sc-b{box-shadow:inset 0 0 0 1px var(--line)}
