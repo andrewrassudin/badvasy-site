@@ -1247,3 +1247,63 @@ b,strong{font-weight:600}
 .sc-b,.tl-nav .sc-b{box-shadow:inset 0 0 0 1px var(--line)}
 .why-grid.wf-measure .wf span{max-height:none!important;opacity:1!important;transition:none!important}
 .why-grid.wf-measure .wf{transition:none!important;min-height:0!important}
+
+/* =========================================================
+   Flat pass — airy, no decorative shadows or outlines.
+   Depth only where something floats over content (stuck header, menus).
+   ========================================================= */
+:root{--sh-1:none;--sh-2:none;--sh-chip:none;--sh-float:0 18px 40px -24px rgba(13,60,70,.28)}
+.float,.st-tag,.bx-top em,.wv-card,.wv-badge,.pcap li,.qr-card,.dirs,.aud-b.is-on,.lang .is-on,.ab:hover .ab-top i,.wf i{box-shadow:none}
+.ring{display:none}
+.bar{border-bottom-color:transparent}
+/* only floating layers keep one soft shadow */
+.hdr.is-stuck .bar>.bar-in{box-shadow:var(--sh-float)}
+.mega-box{box-shadow:var(--sh-float)}
+.mob .wrap{box-shadow:var(--sh-float)}
+
+/* no outlines on surfaces and controls */
+.pt-grid li,.seg span,.sc-b,.tl-nav .sc-b,.btn-ghost{box-shadow:none}
+.fl input{box-shadow:none;background:var(--canvas)}
+.fl input:hover{background:#ebf0f1}
+.fl input:focus{background:#fff;box-shadow:inset 0 0 0 1.5px var(--sky)}
+.sc-b,.tl-nav .sc-b{background:#fff}
+.btn-ghost{background:var(--soft)}
+.btn-ghost:hover{background:#dcebed}
+.btn-out,.btn-out:hover{box-shadow:none}
+.btn-out{background:var(--soft);color:var(--sea)}
+.btn-out:hover{background:#dcebed}
+.btn-line,.btn-line:hover{box-shadow:none}
+.btn-line{background:rgba(255,255,255,.1);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.18)}
+
+/* soft, unhurried hovers: colour and image only */
+.ab b,.dc h3,.pt-grid li,.tl p,.qrc span{transition:color .4s var(--e)}
+.ab:hover b,.dc:hover h3,.tl li:hover p{color:var(--sky)}
+.ab-top i,.pt-ic,.wf i{transition:background-color .4s var(--e),color .4s var(--e)}
+.ab:hover .ab-top i,.pt-grid li:hover .pt-ic{background:var(--lemon);color:var(--sea)}
+.pt-grid li.y:hover .pt-ic{background:#fff}
+.qrc:hover,.pt-grid li:hover{background:#fff}
+.qrc{transition:background-color .4s var(--e)}
+.dc-img img,.nw-big img,.nw-i img,.mcard img,.bx>img{transition:transform 1.2s var(--e-out)}
+
+/* brands: side-opening accordion on desktop */
+@media (min-width:1101px) and (hover:hover){
+  .bxgrid{display:flex;gap:16px}
+  .bx{flex:1 1 0;min-width:0;transition:flex-grow .7s var(--e-out)}
+  .bxgrid:not(:hover) .bx:first-child,.bxgrid .bx:hover{flex-grow:2.4}
+  .bx-c{right:auto;width:340px;max-width:calc(100% - 48px);transition:transform .45s var(--e),max-width .7s var(--e-out)}
+  .bx-d{opacity:0;transition:opacity var(--t) var(--e)}
+  .bx-top i{transition:opacity var(--t) var(--e)}
+  .bxgrid:not(:hover) .bx:first-child .bx-c,.bxgrid .bx:hover .bx-c{transform:none;max-width:340px}
+  .bxgrid:not(:hover) .bx:first-child .bx-d,.bxgrid .bx:hover .bx-d,
+  .bxgrid:not(:hover) .bx:first-child .bx-btn,.bxgrid .bx:hover .bx-btn{opacity:1;transition:opacity var(--t) var(--e) .15s,background-color var(--t) var(--e)}
+  .bxgrid:hover .bx:not(:hover) .bx-top i,.bxgrid:not(:hover) .bx:not(:first-child) .bx-top i{opacity:0}
+}
+@media (min-width:1101px) and (hover:hover){
+  .bx-c,.bxgrid:not(:hover) .bx:first-child .bx-c,.bxgrid .bx:hover .bx-c{transform:none}
+  .bx-d,.bx-btn{max-height:0;overflow:hidden;margin-top:0;transition:opacity var(--t) var(--e),max-height .6s var(--e-out),margin .6s var(--e-out),background-color var(--t) var(--e)}
+  .bx-c{gap:0}
+  .bxgrid:not(:hover) .bx:first-child .bx-d,.bxgrid .bx:hover .bx-d{max-height:90px;margin-top:10px}
+  .bxgrid:not(:hover) .bx:first-child .bx-btn,.bxgrid .bx:hover .bx-btn{max-height:42px;margin-top:20px}
+  .bx-top em{white-space:nowrap}
+}
