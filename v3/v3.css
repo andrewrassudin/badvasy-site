@@ -509,3 +509,8 @@ svg{flex:none}
   .bx.is-on .arr-c{opacity:1;transition:opacity .5s var(--ease-s) .25s,background-color .4s var(--ease-s)}
   .bx-top{right:20px}
 }
+/* brands: two-line description centred on the arrow */
+@media (min-width:1101px){
+  .bx-c{bottom:21px}
+  .bx-d,.bx.is-on .bx-d{height:46px;width:400px;margin-top:14px;display:flex;align-items:center}
+}
