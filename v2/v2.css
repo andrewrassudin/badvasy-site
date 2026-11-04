@@ -1739,3 +1739,10 @@ b,strong{font-weight:600}
 #main:not(:has(.slider)){padding-bottom:var(--sec)}
 .nav .dd{border:1px solid var(--line)!important;box-shadow:0 16px 40px -18px rgba(13,60,70,.35)!important}
 
+
+/* brands: arrow bottom-right like v3 — fades in only on the open card; tags get the full width */
+@media (min-width:1101px){
+  .bx-arr{top:auto;bottom:22px;right:20px;opacity:0;transition:opacity .3s var(--e),background-color .4s var(--e)}
+  .bxgrid>.bx.is-on .bx-arr{opacity:1;transition:opacity .5s var(--e) .25s,background-color .4s var(--e)}
+  .bx-top{right:20px}
+}
