@@ -20,7 +20,7 @@ const SEL = 'a, button, .bx, .dc, .ab, .tl li, .acc-i, .pt-grid li, .qr, .qrc, .
     const p = await b.newPage({ viewport: { width: w, height: 900 } });
     await p.goto(`http://localhost:8123/${v}/?${Date.now()}`, { waitUntil: 'networkidle' });
     // finish entrance animations so they don't count as hover movement
-    await p.addStyleTag({ content: '[data-r],[data-split] .w>span,[data-img],.rv{opacity:1!important;transform:none!important;clip-path:none!important}' });
+    await p.addStyleTag({ content: '[data-r],[data-split] .w>span,[data-img],.rv{opacity:1!important;transform:none!important;clip-path:none!important} .st-bar i,.sc-bar i{animation:none!important} .st-txt>div{transition:none!important}' });
     const H = await p.evaluate(() => document.body.scrollHeight);
     for (let y = 0; y < H; y += 400) { await p.evaluate(y => scrollTo(0, y), y); await p.waitForTimeout(40); }
     await p.waitForTimeout(1500);
@@ -38,7 +38,7 @@ const SEL = 'a, button, .bx, .dc, .ab, .tl li, .acc-i, .pt-grid li, .qr, .qrc, .
     for (let i = 0; i < n; i++) {
       const loc = p.locator(`[data-qa="${i}"]`);
       await p.evaluate(i => document.querySelector(`[data-qa="${i}"]`).scrollIntoView({ block: 'center' }), i);
-      await p.mouse.move(1, 1); await p.waitForTimeout(450);
+      await p.mouse.move(1, 1); await p.waitForTimeout(1000); // let scroll-triggered entrance motion settle first
       const box = await loc.boundingBox(); if (!box || box.width < 2) continue;
       const a = await snap(i);
       await p.mouse.move(box.x + Math.min(24, box.width / 2), box.y + Math.min(16, box.height / 2));

@@ -1,0 +1,46 @@
+/* Shared phone layer for v2 and v3 — loaded after each version's stylesheet. */
+.mc-dots{display:none}
+
+@media (max-width:720px){
+  /* ---------- swipe carousels: one card + peek of the next, dots below ---------- */
+  .mc{display:flex!important;gap:12px!important;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    margin-left:calc(-1 * var(--gut))!important;margin-right:calc(-1 * var(--gut))!important;
+    padding:4px var(--gut) 12px!important;scroll-padding-left:var(--gut);grid-template-columns:none!important}
+  .mc::-webkit-scrollbar{display:none}
+  .mc{flex-direction:row!important;height:auto!important}
+  .mc>*{flex:0 0 84%!important;max-width:84%!important;width:auto!important;scroll-snap-align:start;margin:0!important;grid-column:auto!important}
+  .mc-dots{display:flex;justify-content:center;gap:8px;margin-top:8px}
+  .mc-dots button{width:8px;height:8px;padding:0;border:0;border-radius:4px;background:#D5E1E3;transition:width .3s cubic-bezier(.25,.1,.25,1),background-color .3s cubic-bezier(.25,.1,.25,1)}
+  .mc-dots button.on{width:22px;background:#0D3C46}
+  /* brand cards stay tall photos inside the carousel */
+  .bxgrid.mc>*,.bx-row.mc>*{height:420px!important;min-height:420px}
+
+  /* ---------- footer sitemap: accordion, one column ---------- */
+  .f2-nav,.ft-nav{display:block!important}
+  .fa-col{border-bottom:1px solid rgba(255,255,255,.14);padding:0!important}
+  .fa-col h4{display:flex;justify-content:space-between;align-items:center;margin:0!important;padding:16px 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .fa-col h4::after{content:"";width:12px;height:12px;flex:none;margin-left:12px;
+    background:linear-gradient(currentColor,currentColor) center/12px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 12px no-repeat;
+    transition:transform .3s cubic-bezier(.25,.1,.25,1)}
+  .fa-col.fa-on h4::after{transform:rotate(45deg)}
+  .fa-col>a{display:none!important}
+  .fa-col.fa-on>a{display:block!important;padding:6px 0!important}
+  .fa-col.fa-on{padding-bottom:12px!important}
+
+  /* ---------- first screen: menu → hero photo → text, all within one screen ---------- */
+  /* v2 */
+  .hero .slide .s-media{height:30vh;min-height:200px;max-height:260px}
+  .hero .s-copy{padding-top:20px!important;padding-bottom:72px!important}
+  .hero .s-copy .s-tag{margin-bottom:12px}
+  .hero .s-copy p{margin-top:10px}
+  .hero .s-cta{margin-top:18px}
+  /* v3: photo first, slide card after the text */
+  .hero:has(.stage) .wrap{display:flex;flex-direction:column;position:relative}
+  .hero:has(.stage){padding-top:4px}
+  .hero .stage{display:contents}
+  .hero .st-media{order:-2;position:relative!important;inset:auto!important;width:100%;height:30vh!important;min-height:200px;max-height:260px;margin:0;border-radius:12px;overflow:hidden;flex:none}
+    .hero .hero-top{order:0;margin-top:20px;gap:16px}
+  .hero .st-card{order:1;margin-top:28px}
+}
+@media (max-width:720px){.hist{padding-bottom:24px}}
